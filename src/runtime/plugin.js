@@ -3,28 +3,27 @@ export default function (parentClass) {
     constructor() {
       super();
 
-      const b = this._runtime.GetDispatcher();
-      this._disposables = [
-        b.addEventListener("pointerdown", (e) => this._OnPointerDown(e)),
-        b.addEventListener("pointermove", (e) => this._OnPointerMove(e)),
-        b.addEventListener("pointerup", (e) => this._OnPointerUp(e, false)),
-        b.addEventListener("pointercancel", (e) => this._OnPointerUp(e, true)),
-        b.addEventListener("mousemove", (e) => this._OnMouseMove(e)),
-        b.addEventListener("mousedown", (e) => this._OnMouseDown(e)),
-        b.addEventListener("mouseup", (e) => this._OnMouseUp(e)),
+      this.events = [
+        ["pointerdown", (e) => this._OnPointerDown(e)],
+        ["pointermove", (e) => this._OnPointerMove(e)],
+        ["pointerup", (e) => this._OnPointerUp(e, false)],
+        ["pointercancel", (e) => this._OnPointerUp(e, true)],
+        ["mousemove", (e) => this._OnMouseMove(e)],
+        ["mousedown", (e) => this._OnMouseDown(e)],
+        ["mouseup", (e) => this._OnMouseUp(e)],
       ];
+      this.events.forEach(([event, handler]) =>
+        this.runtime.addEventListener(event, handler)
+      );
 
       this.AllObjectClasses = [];
     }
 
     _release() {
-      if (this._disposables) {
-        for (const disposable of this._disposables) {
-          if (disposable && disposable.remove) {
-            disposable.remove();
-          }
+      if (this.events) {
+        for (const [event, handler] of this.events) {
+          this.runtime.removeEventListener(event, handler);
         }
-        this._disposables = null;
       }
       super._release();
     }
@@ -32,13 +31,13 @@ export default function (parentClass) {
     GetInstances() {
       const arr = [];
       if (this.AllObjectClasses.length === 0) {
-        this.AllObjectClasses = this._runtime
-          .GetAllObjectClasses()
-          .filter((a) => a.GetPlugin() === this);
+        this.AllObjectClasses = [...this._runtime.objects]
+          .filter((objClass) => objClass[1]._plugin === this)
+          .map(([name, objClass]) => objClass);
       }
 
       for (const objClass of this.AllObjectClasses) {
-        arr.push(...objClass.GetInstances());
+        arr.push(...objClass.instances());
       }
       return arr;
     }
@@ -47,11 +46,7 @@ export default function (parentClass) {
       if (e.pointerType === "mouse") {
         this._OnMouseDown(e);
       } else {
-        this._OnInputDown(
-          e.pointerId.toString(),
-          e.clientX - this._runtime.GetCanvasManager().GetCanvasClientX(),
-          e.clientY - this._runtime.GetCanvasManager().GetCanvasClientY()
-        );
+        this._OnInputDown(e.pointerId.toString(), e.clientX, e.clientY);
       }
     }
 
@@ -59,11 +54,7 @@ export default function (parentClass) {
       if (e.pointerType === "mouse") {
         this._OnMouseMove(e);
       } else {
-        this._OnInputMove(
-          e.pointerId.toString(),
-          e.clientX - this._runtime.GetCanvasManager().GetCanvasClientX(),
-          e.clientY - this._runtime.GetCanvasManager().GetCanvasClientY()
-        );
+        this._OnInputMove(e.pointerId.toString(), e.clientX, e.clientY);
       }
     }
 
@@ -77,19 +68,11 @@ export default function (parentClass) {
 
     _OnMouseDown(e) {
       if (e.button !== 0) return;
-      this._OnInputDown(
-        "mouse",
-        e.clientX - this._runtime.GetCanvasManager().GetCanvasClientX(),
-        e.clientY - this._runtime.GetCanvasManager().GetCanvasClientY()
-      );
+      this._OnInputDown("mouse", e.clientX, e.clientY);
     }
 
     _OnMouseMove(e) {
-      this._OnInputMove(
-        "mouse",
-        e.clientX - this._runtime.GetCanvasManager().GetCanvasClientX(),
-        e.clientY - this._runtime.GetCanvasManager().GetCanvasClientY()
-      );
+      this._OnInputMove("mouse", e.clientX, e.clientY);
     }
 
     _OnMouseUp(e) {
@@ -98,71 +81,65 @@ export default function (parentClass) {
     }
 
     _OnInputDown(source, canvasX, canvasY) {
+      debugger;
       const instances = this.GetInstances();
       let selectedInst = null;
-      let selectedSdkInst = null;
       let selectedX = 0;
       let selectedY = 0;
 
       for (const inst of instances) {
-        const sdkInst = inst.GetSdkInstance();
-        if (sdkInst.IsDragging()) continue;
+        if (inst.IsDragging()) continue;
 
-        const wi = inst.GetWorldInfo();
-        const layer = wi.GetLayer();
-        const [layerX, layerY] = layer.CanvasCSSToLayer(canvasX, canvasY);
+        const layer = inst.layer;
+        const [layerX, layerY] = layer.cssCoordsToLayer(canvasX, canvasY);
 
-        if (!sdkInst.CanDrag(layerX, layerY, source)) continue;
+        if (!inst.CanDrag(layerX, layerY, source)) continue;
 
         if (!selectedInst) {
           selectedInst = inst;
-          selectedSdkInst = sdkInst;
           selectedX = layerX;
           selectedY = layerY;
           continue;
         }
 
-        const selectedWi = selectedInst.GetWorldInfo();
         if (
-          layer.GetIndex() > selectedWi.GetLayer().GetIndex() ||
-          (layer.GetIndex() === selectedWi.GetLayer().GetIndex() &&
-            wi.GetZIndex() > selectedWi.GetZIndex())
+          layer.index > selectedInst.layer.index ||
+          (layer.index === selectedInst.layer.index &&
+            inst.zIndex > selectedInst.zIndex)
         ) {
           selectedInst = inst;
-          selectedSdkInst = sdkInst;
           selectedX = layerX;
           selectedY = layerY;
         }
       }
 
-      if (selectedInst && selectedSdkInst) {
-        selectedSdkInst.OnDown(source, selectedX, selectedY);
+      if (selectedInst) {
+        selectedInst.OnDown(source, selectedX, selectedY);
       }
     }
 
     _OnInputMove(source, canvasX, canvasY) {
+      debugger;
       const instances = this.GetInstances();
       for (const inst of instances) {
-        const sdkInst = inst.GetSdkInstance();
         if (
-          !sdkInst.IsDragging() ||
-          (sdkInst.IsDragging() && sdkInst.GetDragSource() !== source)
+          !inst.IsDragging() ||
+          (inst.IsDragging() && inst.GetDragSource() !== source)
         )
           continue;
 
-        const wi = inst.GetWorldInfo();
-        const layer = wi.GetLayer();
-        const [layerX, layerY] = layer.CanvasCSSToLayer(canvasX, canvasY);
-        sdkInst.OnMove(layerX, layerY);
+        const layer = inst.layer;
+        const [layerX, layerY] = layer.cssCoordsToLayer(canvasX, canvasY);
+        inst.OnMove(layerX, layerY);
       }
     }
 
     _OnInputUp(source) {
+      debugger;
       const instances = this.GetInstances();
       for (const inst of instances) {
-        const sdkInst = inst.GetSdkInstance();
-        if (sdkInst.IsDragging() && sdkInst.GetDragSource() === source) {
-          sdkInst.OnUp();
+        if (inst.IsDragging() && inst.GetDragSource() === source) {
+          inst.OnUp();
         }
       }
     }

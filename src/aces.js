@@ -70,22 +70,17 @@ action(
         name: "Handle",
         desc: "The Handle to bind.",
         type: "object",
-        allowedPluginIds: ["Sprite"],
+        allowedPluginIds: ["<world>"],
       },
     ],
   },
-  function (type) {
+  function (objectClass) {
     if (this.handle) {
-      this._runtime.DestroyInstance(this.handle);
+      this.handle.destroy();
     }
-    this.handle = this._runtime.CreateInstance(
-      type,
-      this._inst.GetWorldInfo().GetLayer().GetIndex(),
-      this._inst.GetWorldInfo().GetX(),
-      this._inst.GetWorldInfo().GetY()
-    );
+    this.handle = objectClass.createInstance(this.layer, this.x, this.y);
     if (this.handle) {
-      this.handleUID = this.handle.GetUID();
+      this.handleUID = this.handle.uid;
     }
   }
 );
@@ -180,12 +175,7 @@ expression(
   },
   function () {
     if (!this.handle) return 0;
-    return this.angleDiff(
-      this._inst.GetWorldInfo().GetX(),
-      this._inst.GetWorldInfo().GetY(),
-      this.handle.GetWorldInfo().GetX(),
-      this.handle.GetWorldInfo().GetY()
-    );
+    return this.angleDiff(this.x, this.y, this.handle.x, this.handle.y);
   },
   false
 );
@@ -202,12 +192,7 @@ expression(
   },
   function () {
     if (!this.handle) return 0;
-    return this.distance(
-      this._inst.GetWorldInfo().GetX(),
-      this._inst.GetWorldInfo().GetY(),
-      this.handle.GetWorldInfo().GetX(),
-      this.handle.GetWorldInfo().GetY()
-    );
+    return this.distance(this.x, this.y, this.handle.x, this.handle.y);
   },
   false
 );
@@ -224,12 +209,7 @@ expression(
   },
   function () {
     if (!this.handle) return 0;
-    const dist = this.distance(
-      this._inst.GetWorldInfo().GetX(),
-      this._inst.GetWorldInfo().GetY(),
-      this.handle.GetWorldInfo().GetX(),
-      this.handle.GetWorldInfo().GetY()
-    );
+    const dist = this.distance(this.x, this.y, this.handle.x, this.handle.y);
     const radius = this.joystickRadius();
     return dist / radius;
   },
@@ -263,7 +243,7 @@ expression(
     params: [],
   },
   function () {
-    return this._inst.GetWorldInfo().GetX();
+    return this.x;
   },
   false
 );
@@ -279,7 +259,7 @@ expression(
     params: [],
   },
   function () {
-    return this._inst.GetWorldInfo().GetY();
+    return this.y;
   },
   false
 );
@@ -296,7 +276,7 @@ expression(
   },
   function () {
     if (!this.handle) return 0;
-    return this.handle.GetWorldInfo().GetX() - this._inst.GetWorldInfo().GetX();
+    return this.handle.x - this.x;
   },
   false
 );
@@ -313,7 +293,7 @@ expression(
   },
   function () {
     if (!this.handle) return 0;
-    return this.handle.GetWorldInfo().GetY() - this._inst.GetWorldInfo().GetY();
+    return this.handle.y - this.y;
   },
   false
 );
@@ -330,8 +310,7 @@ expression(
   },
   function () {
     if (!this.handle) return 0;
-    const dist =
-      this.handle.GetWorldInfo().GetX() - this._inst.GetWorldInfo().GetX();
+    const dist = this.handle.x - this.x;
     const radius = this.joystickRadius();
     return dist / radius;
   },
@@ -350,8 +329,7 @@ expression(
   },
   function () {
     if (!this.handle) return 0;
-    const dist =
-      this.handle.GetWorldInfo().GetY() - this._inst.GetWorldInfo().GetY();
+    const dist = this.handle.y - this.y;
     const radius = this.joystickRadius();
     return dist / radius;
   },

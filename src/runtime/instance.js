@@ -12,13 +12,13 @@ export default function (parentClass) {
 
       this.handle = null;
       this.handleUID = -1;
-      this.originX = this._inst.GetWorldInfo().GetX();
-      this.originY = this._inst.GetWorldInfo().GetY();
+      this.originX = this.x;
+      this.originY = this.y;
       this.touchEvent = this.properties[0];
       this.initVisible = this.touchEvent !== 1 || this.properties[1] === 0;
 
       if (!this.initVisible) {
-        this._inst.GetWorldInfo().SetOpacity(0);
+        this.opacity = 0;
       }
 
       this.mode = this.properties[2];
@@ -80,12 +80,7 @@ export default function (parentClass) {
     CanDrag(x, y, type) {
       if (type === "mouse" && !this.useMouseInput) return false;
 
-      const dist = this.distance(
-        this._inst.GetWorldInfo().GetX(),
-        this._inst.GetWorldInfo().GetY(),
-        x,
-        y
-      );
+      const dist = this.distance(this.x, this.y, x, y);
       const joyRadius = this.joystickRadius();
       let maxDist = joyRadius;
       if (this.mode !== 0) {
@@ -95,12 +90,7 @@ export default function (parentClass) {
     }
 
     joystickRadius() {
-      return (
-        Math.min(
-          Math.abs(this._inst.GetWorldInfo().GetWidth()),
-          Math.abs(this._inst.GetWorldInfo().GetHeight())
-        ) / 2
-      );
+      return Math.min(Math.abs(this.width), Math.abs(this.height)) / 2;
     }
 
     distance(x1, y1, x2, y2) {
@@ -116,9 +106,8 @@ export default function (parentClass) {
     }
 
     OnDown(source, x, y) {
-      const wi = this._inst.GetWorldInfo();
       this.dragSource = source;
-      const dist = this.distance(wi.GetX(), wi.GetY(), x, y);
+      const dist = this.distance(this.x, this.y, x, y);
       const joyRadius = this.joystickRadius();
       this.dragging = true;
 
@@ -131,46 +120,38 @@ export default function (parentClass) {
       }
 
       if (dist < this.zoneRadius && (this.mode === 1 || this.mode === 2)) {
-        wi.SetXY(x, y);
-        wi.SetBboxChanged();
+        this.setPosition(x, y);
         if (this.handle) {
-          this.handle.GetWorldInfo().SetXY(x, y);
-          this.handle.GetWorldInfo().SetBboxChanged();
+          this.handle.setPosition(x, y);
         }
       } else if (dist < joyRadius) {
         if (this.handle) {
-          this.handle.GetWorldInfo().SetXY(x, y);
-          this.handle.GetWorldInfo().SetBboxChanged();
+          this.handle.setPosition(x, y);
         }
       }
     }
-
     OnMove(x, y) {
       if (!this.handle) return;
 
-      const wi = this._inst.GetWorldInfo();
-      const dist = this.distance(wi.GetX(), wi.GetY(), x, y);
+      const dist = this.distance(this.x, this.y, x, y);
       const joyRadius = this.joystickRadius();
-      const offsetX = x - wi.GetX();
-      const offsetY = y - wi.GetY();
+      const offsetX = x - this.x;
+      const offsetY = y - this.y;
       const ratio = joyRadius / dist;
 
       if (dist <= joyRadius) {
-        this.handle.GetWorldInfo().SetXY(x, y);
-        this.handle.GetWorldInfo().SetBboxChanged();
+        this.handle.setPosition(x, y);
       } else {
         if (this.mode === 1) {
           const off2X = offsetX - offsetX * ratio;
           const off2Y = offsetY - offsetY * ratio;
-          wi.OffsetXY(off2X, off2Y);
-          wi.SetBboxChanged();
-          this.handle.GetWorldInfo().SetXY(x, y);
-          this.handle.GetWorldInfo().SetBboxChanged();
+          this.offsetPosition(off2X, off2Y);
+          this.handle.setPosition(x, y);
         } else {
-          this.handle
-            .GetWorldInfo()
-            .SetXY(wi.GetX() + offsetX * ratio, wi.GetY() + offsetY * ratio);
-          this.handle.GetWorldInfo().SetBboxChanged();
+          this.handle.setPosition(
+            this.x + offsetX * ratio,
+            this.y + offsetY * ratio
+          );
         }
       }
     }
@@ -185,18 +166,11 @@ export default function (parentClass) {
         this.fadeOut = true;
         this.fadeIn = false;
       } else if (this.touchEvent === 2) {
-        this._inst.GetWorldInfo().SetXY(this.originX, this.originY);
-        this._inst.GetWorldInfo().SetBboxChanged();
+        this.setPosition(this.originX, this.originY);
       }
 
       if (this.handle) {
-        this.handle
-          .GetWorldInfo()
-          .SetXY(
-            this._inst.GetWorldInfo().GetX(),
-            this._inst.GetWorldInfo().GetY()
-          );
-        this.handle.GetWorldInfo().SetBboxChanged();
+        this.handle.setPosition(this.x, this.y);
       }
     }
 
@@ -204,55 +178,42 @@ export default function (parentClass) {
       if (this.justLoaded) this.AfterLoad();
 
       if (this.fadeIn) {
-        if (this._inst.GetWorldInfo().GetOpacity() < 1) {
+        if (this.opacity < 1) {
           const timeInFrames = (60 * this.fadeTime) / 1000;
-          const currentOpacity = this._inst.GetWorldInfo().GetOpacity();
+          const currentOpacity = this.opacity;
           const newOpacity =
             currentOpacity + (1.1 - currentOpacity) / timeInFrames;
-          this._inst.GetWorldInfo().SetOpacity(newOpacity);
-          this._runtime.UpdateRender();
+          this.opacity = newOpacity;
+          this.runtime.updateRender();
         }
-        if (this._inst.GetWorldInfo().GetOpacity() >= 1) {
-          this._inst.GetWorldInfo().SetOpacity(1);
+        if (this.opacity >= 1) {
+          this.opacity = 1;
           this.fadeIn = false;
           this.fadeOut = false;
         }
       } else if (this.fadeOut) {
-        if (this._inst.GetWorldInfo().GetOpacity() > 0) {
+        if (this.opacity > 0) {
           const timeInFrames = (60 * this.fadeTime) / 1000;
-          const currentOpacity = this._inst.GetWorldInfo().GetOpacity();
+          const currentOpacity = this.opacity;
           const newOpacity =
             currentOpacity + (-0.1 - currentOpacity) / timeInFrames;
-          this._inst.GetWorldInfo().SetOpacity(newOpacity);
-          this._runtime.UpdateRender();
+          this.opacity = newOpacity;
+          this.runtime.updateRender();
         }
-        if (this._inst.GetWorldInfo().GetOpacity() <= 0) {
-          this._inst.GetWorldInfo().SetXY(this.originX, this.originY);
-          this._inst.GetWorldInfo().SetBboxChanged();
+        if (this.opacity <= 0) {
+          this.setPosition(this.originX, this.originY);
 
           if (this.handle) {
-            this.handle
-              .GetWorldInfo()
-              .SetXY(
-                this._inst.GetWorldInfo().GetX(),
-                this._inst.GetWorldInfo().GetY()
-              );
-            this.handle.GetWorldInfo().SetBboxChanged();
+            this.handle.setPosition(this.x, this.y);
           }
-          this._inst.GetWorldInfo().SetOpacity(0);
+          this.opacity = 0;
           this.fadeIn = false;
           this.fadeOut = false;
         }
       }
 
-      if (
-        this.handle &&
-        this.handle.GetWorldInfo().GetOpacity() !==
-          this._inst.GetWorldInfo().GetOpacity()
-      ) {
-        this.handle
-          .GetWorldInfo()
-          .SetOpacity(this._inst.GetWorldInfo().GetOpacity());
+      if (this.handle && this.handle.opacity !== this.opacity) {
+        this.handle.opacity = this.opacity;
       }
     }
 
@@ -262,20 +223,21 @@ export default function (parentClass) {
 
       if (!texture) return; // dynamic texture load which hasn't completed yet; can't draw anything
 
-      const wi = this._inst.GetWorldInfo();
-      const quad = wi.GetBoundingQuad();
+      const quad = this.getBoundingQuad();
       const rcTex = imageInfo.GetTexRect();
 
-      renderer.SetTexture(texture);
+      renderer.setTexture(texture);
+      renderer.setAlphaBlendMode();
+      renderer.setTextureFillMode();
 
-      if (this._runtime.IsPixelRoundingEnabled()) {
-        const ox = Math.round(wi.GetX()) - wi.GetX();
-        const oy = Math.round(wi.GetY()) - wi.GetY();
-        const tempQuad = wi.GetBoundingQuad();
+      if (this._runtime.isPixelRoundingEnabled) {
+        const ox = Math.round(this.x) - this.x;
+        const oy = Math.round(this.y) - this.y;
+        const tempQuad = this.getBoundingQuad();
         tempQuad.offset(ox, oy);
-        renderer.Quad3(tempQuad, rcTex);
+        renderer.quad3(tempQuad, rcTex);
       } else {
-        renderer.Quad3(quad, rcTex);
+        renderer.quad3(quad, rcTex);
       }
     }
 
@@ -315,7 +277,7 @@ export default function (parentClass) {
 
     AfterLoad() {
       this.justLoaded = false;
-      this.handle = this._runtime.GetInstanceByUID(this.handleUID);
+      this.handle = this._runtime.getInstanceByUid(this.handleUID);
     }
 
     _getDebuggerProperties() {
@@ -330,12 +292,12 @@ export default function (parentClass) {
             },
             {
               name: "Handle X",
-              value: this.handle ? this.handle.GetWorldInfo().GetX() : "null",
+              value: this.handle ? this.handle.x : "null",
               readonly: true,
             },
             {
               name: "Handle Y",
-              value: this.handle ? this.handle.GetWorldInfo().GetY() : "null",
+              value: this.handle ? this.handle.y : "null",
               readonly: true,
             },
             {
