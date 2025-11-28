@@ -5,17 +5,17 @@ import {
   PROPERTY_TYPE,
 } from "./template/enums.js";
 import _version from "./version.js";
-export const addonType = ADDON_TYPE.PLUGIN;
+export const addonType = ADDON_TYPE.BEHAVIOR;
 export const type = PLUGIN_TYPE.OBJECT;
-export const id = "sample_addon";
-export const name = "Sample Addon";
+export const id = "better_joystick";
+export const name = "Better Joystick";
 export const version = _version;
 export const minConstructVersion = undefined;
 export const author = "skymen";
-export const website = "https://www.construct.net";
-export const documentation = "https://www.construct.net";
-export const description = "Description";
-export const category = ADDON_CATEGORY.GENERAL;
+export const website = "https://github.com/skymen/better-joystick";
+export const documentation = "https://github.com/skymen/better-joystick";
+export const description = "A simpler and smart joystick behavior.";
+export const category = ADDON_CATEGORY.INPUT;
 
 export const hasDomside = false;
 export const files = {
@@ -45,7 +45,7 @@ export const info = {
     GooglePlayServicesEnabled: false,
 
     // BEHAVIOR only
-    IsOnlyOneAllowed: false,
+    IsOnlyOneAllowed: true,
 
     // PLUGIN world only
     IsResizable: false,
