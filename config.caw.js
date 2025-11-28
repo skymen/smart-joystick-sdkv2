@@ -5,16 +5,16 @@ import {
   PROPERTY_TYPE,
 } from "./template/enums.js";
 import _version from "./version.js";
-export const addonType = ADDON_TYPE.BEHAVIOR;
-export const type = PLUGIN_TYPE.OBJECT;
-export const id = "better_joystick";
-export const name = "Better Joystick";
+export const addonType = ADDON_TYPE.PLUGIN;
+export const type = PLUGIN_TYPE.WORLD;
+export const id = "skymen_smartJoystick";
+export const name = "Smart Joystick";
 export const version = _version;
 export const minConstructVersion = undefined;
 export const author = "skymen";
-export const website = "https://github.com/skymen/better-joystick";
-export const documentation = "https://github.com/skymen/better-joystick";
-export const description = "A simpler and smart joystick behavior.";
+export const website = "https://www.construct.net";
+export const documentation = "https://www.construct.net";
+export const description = "A smart joystick plugin";
 export const category = ADDON_CATEGORY.INPUT;
 
 export const hasDomside = false;
@@ -35,9 +35,9 @@ export const files = {
 export const aceCategories = {};
 
 export const info = {
-  // icon: "icon.svg",
+  icon: "icon.svg",
   // PLUGIN world only
-  // defaultImageUrl: "default-image.png",
+  defaultImageUrl: "default-image.png",
   Set: {
     // COMMON to all
     CanBeBundled: true,
@@ -45,68 +45,94 @@ export const info = {
     GooglePlayServicesEnabled: false,
 
     // BEHAVIOR only
-    IsOnlyOneAllowed: true,
+    IsOnlyOneAllowed: false,
 
     // PLUGIN world only
-    IsResizable: false,
-    IsRotatable: false,
+    IsResizable: true,
+    IsRotatable: true,
     Is3D: false,
-    HasImage: false,
+    HasImage: true,
     IsTiled: false,
     SupportsZElevation: false,
-    SupportsColor: false,
-    SupportsEffects: false,
+    SupportsColor: true,
+    SupportsEffects: true,
     MustPreDraw: false,
 
     // PLUGIN object only
-    IsSingleGlobal: true,
+    IsSingleGlobal: false,
   },
   // PLUGIN only
   AddCommonACEs: {
-    Position: false,
+    Position: true,
     SceneGraph: false,
-    Size: false,
-    Angle: false,
-    Appearance: false,
-    ZOrder: false,
+    Size: true,
+    Angle: true,
+    Appearance: true,
+    ZOrder: true,
   },
 };
 
 export const properties = [
-  /*
   {
-    type: PROPERTY_TYPE.INTEGER,
-    id: "property_id",
+    type: PROPERTY_TYPE.COMBO,
+    id: "touch_event",
     options: {
-      initialValue: 0,
-      interpolatable: false,
-
-      // minValue: 0, // omit to disable
-      // maxValue: 100, // omit to disable
-
-      // for type combo only
-      // items: [
-      //   {itemId1: "item name1" },
-      //   {itemId2: "item name2" },
-      // ],
-
-      // dragSpeedMultiplier: 1, // omit to disable
-
-      // for type object only
-      // allowedPluginIds: ["Sprite", "<world>"],
-
-      // for type link only
-      // linkCallback: function(instOrObj) {},
-      // linkText: "Link Text",
-      // callbackType:
-      //   "for-each-instance"
-      //   "once-for-type"
-
-      // for type info only
-      // infoCallback: function(inst) {},
+      initialValue: "none",
+      items: [{ none: "None" }, { fade: "Fade" }, { reset: "Reset Position" }],
     },
-    name: "Property Name",
-    desc: "Property Description",
-  }
-  */
+    name: "Touch Event",
+    desc: "What to do on touch start and touch end",
+  },
+  {
+    type: PROPERTY_TYPE.COMBO,
+    id: "initial_state",
+    options: {
+      initialValue: "visible",
+      items: [{ visible: "Visible" }, { invisible: "Invisible" }],
+    },
+    name: "Initial State",
+    desc: "If Fade, decides if the joystick starts visible or not.",
+  },
+  {
+    type: PROPERTY_TYPE.COMBO,
+    id: "mode",
+    options: {
+      initialValue: "none",
+      items: [{ none: "None" }, { smart: "Smart" }, { spawn: "Spawn" }],
+    },
+    name: "Mode",
+    desc: "None behaves like a regular joystick. Smart follows the handle if it gets too far. Spawn spawns the joystick if clicked anywhere within the radius then behaves like a regular joystick.",
+  },
+  {
+    type: PROPERTY_TYPE.FLOAT,
+    id: "radius",
+    options: {
+      initialValue: 100,
+      interpolatable: false,
+      minValue: 0,
+    },
+    name: "Radius",
+    desc: "Only if smart or spawn. Decides the radius in which the joystick gets triggered anyway.",
+  },
+  {
+    type: PROPERTY_TYPE.COMBO,
+    id: "use_mouse_input",
+    options: {
+      initialValue: "yes",
+      items: [{ yes: "Yes" }, { no: "No" }],
+    },
+    name: "Use Mouse Input",
+    desc: "Whether to use mouse input or only touch input",
+  },
+  {
+    type: PROPERTY_TYPE.FLOAT,
+    id: "fade_time",
+    options: {
+      initialValue: 300,
+      interpolatable: false,
+      minValue: 0,
+    },
+    name: "Fade time",
+    desc: "Only if Touch event is set to fade. The time is in milliseconds.",
+  },
 ];
