@@ -13,11 +13,13 @@
         "properties": {
           "texture": {
             "name": "Texture",
-            "desc": "Click to edit the object's texture."
+            "desc": "Click to edit the object's texture.",
+            "link-text": "Edit"
           },
           "size": {
             "name": "Size",
-            "desc": "Click to set the object to the same size as its image."
+            "desc": "Click to set the object to the same size as its image.",
+            "link-text": "Make 1:1"
           },
           "touch_event": {
             "name": "Touch Event",
