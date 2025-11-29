@@ -12,8 +12,8 @@ export default function (parentClass) {
 
       this.handle = null;
       this.handleUID = -1;
-      this.originX = this.x;
-      this.originY = this.y;
+      this.originalX = this.x;
+      this.originalY = this.y;
       // Note: LINK properties (texture, size) are NOT included in runtime properties array
       this.touchEvent = this.properties[0]; // touch_event (COMBO)
       this.initVisible = this.touchEvent !== 1 || this.properties[1] === 0; // initial_state (COMBO)
@@ -164,7 +164,7 @@ export default function (parentClass) {
         this.fadeOut = true;
         this.fadeIn = false;
       } else if (this.touchEvent === 2) {
-        this.setPosition(this.originX, this.originY);
+        this.setPosition(this.originalX, this.originalY);
       }
 
       if (this.handle) {
@@ -199,7 +199,7 @@ export default function (parentClass) {
           this.runtime.sdk.updateRender();
         }
         if (this.opacity <= 0) {
-          this.setPosition(this.originX, this.originY);
+          this.setPosition(this.originalX, this.originalY);
 
           if (this.handle) {
             this.handle.setPosition(this.x, this.y);
@@ -250,8 +250,8 @@ export default function (parentClass) {
     _saveToJson() {
       return {
         handleUID: this.handleUID,
-        originX: this.originX,
-        originY: this.originY,
+        originX: this.originalX,
+        originY: this.originalY,
         touchEvent: this.touchEvent,
         mode: this.mode,
         zoneRadius: this.zoneRadius,
@@ -263,8 +263,8 @@ export default function (parentClass) {
 
     _loadFromJson(o) {
       this.handleUID = o.handleUID;
-      this.originX = o.originX;
-      this.originY = o.originY;
+      this.originX = o.originalX;
+      this.originY = o.originalY;
       this.touchEvent = o.touchEvent;
       this.mode = o.mode;
       this.zoneRadius = o.zoneRadius;
