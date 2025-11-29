@@ -1,9 +1,9 @@
 <img src="./src/icon.svg" width="100" /><br>
 # Smart Joystick
 <i>A smart joystick plugin</i> <br>
-### Version 2.0.0.1
+### Version 2.0.0.2
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/better-joystick/releases/download/skymen_smartJoystick-2.0.0.1.c3addon/skymen_smartJoystick-2.0.0.1.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/better-joystick/releases/download/skymen_smartJoystick-2.0.0.2.c3addon/skymen_smartJoystick-2.0.0.2.c3addon)
 <br>
 <sub> [See all releases](https://github.com/skymen/better-joystick/releases) </sub> <br>
 
@@ -47,7 +47,7 @@ npm run dev
 | Mode | None behaves like a regular joystick. Smart follows the handle if it gets too far. Spawn spawns the joystick if clicked anywhere within the radius then behaves like a regular joystick. | combo |
 | Radius | Only if smart or spawn. Decides the radius in which the joystick gets triggered anyway. | float |
 | Use Mouse Input | Whether to use mouse input or only touch input | combo |
-| Fade time | Only if Touch event is set to fade. The time is in milliseconds. | float |
+| Fade time | Only if Touch event is set to fade. The time is in milliseconds. | integer |
 
 
 ---
