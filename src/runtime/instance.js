@@ -33,7 +33,7 @@ export default function (parentClass) {
       this.dragSource = "<none>";
       this.useMouseInput = this.properties[4] === 0;
 
-      this._startTicking();
+      this._setTicking(true);
     }
 
     _trigger(method) {
