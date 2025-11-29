@@ -104,8 +104,12 @@ export const properties = [
     type: PROPERTY_TYPE.COMBO,
     id: "touch_event",
     options: {
-      initialValue: "none",
-      items: [{ none: "None" }, { fade: "Fade" }, { reset: "Reset Position" }],
+      initialValue: "None",
+      items: [
+        { None: "None" },
+        { Fade: "Fade" },
+        { "Reset Position": "Reset Position" },
+      ],
     },
     name: "Touch Event",
     desc: "What to do on touch start and touch end",
@@ -114,8 +118,8 @@ export const properties = [
     type: PROPERTY_TYPE.COMBO,
     id: "initial_state",
     options: {
-      initialValue: "visible",
-      items: [{ visible: "Visible" }, { invisible: "Invisible" }],
+      initialValue: "Visible",
+      items: [{ Visible: "Visible" }, { Invisible: "Invisible" }],
     },
     name: "Initial State",
     desc: "If Fade, decides if the joystick starts visible or not.",
@@ -124,8 +128,8 @@ export const properties = [
     type: PROPERTY_TYPE.COMBO,
     id: "mode",
     options: {
-      initialValue: "none",
-      items: [{ none: "None" }, { smart: "Smart" }, { spawn: "Spawn" }],
+      initialValue: "None",
+      items: [{ None: "None" }, { Smart: "Smart" }, { Spawn: "Spawn" }],
     },
     name: "Mode",
     desc: "None behaves like a regular joystick. Smart follows the handle if it gets too far. Spawn spawns the joystick if clicked anywhere within the radius then behaves like a regular joystick.",
@@ -145,8 +149,8 @@ export const properties = [
     type: PROPERTY_TYPE.COMBO,
     id: "use_mouse_input",
     options: {
-      initialValue: "yes",
-      items: [{ yes: "Yes" }, { no: "No" }],
+      initialValue: "Yes",
+      items: [{ Yes: "Yes" }, { No: "No" }],
     },
     name: "Use Mouse Input",
     desc: "Whether to use mouse input or only touch input",

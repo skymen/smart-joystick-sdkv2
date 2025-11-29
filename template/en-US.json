@@ -25,26 +25,26 @@
             "name": "Touch Event",
             "desc": "What to do on touch start and touch end",
             "items": {
-              "none": "None",
-              "fade": "Fade",
-              "reset": "Reset Position"
+              "None": "None",
+              "Fade": "Fade",
+              "Reset Position": "Reset Position"
             }
           },
           "initial_state": {
             "name": "Initial State",
             "desc": "If Fade, decides if the joystick starts visible or not.",
             "items": {
-              "visible": "Visible",
-              "invisible": "Invisible"
+              "Visible": "Visible",
+              "Invisible": "Invisible"
             }
           },
           "mode": {
             "name": "Mode",
             "desc": "None behaves like a regular joystick. Smart follows the handle if it gets too far. Spawn spawns the joystick if clicked anywhere within the radius then behaves like a regular joystick.",
             "items": {
-              "none": "None",
-              "smart": "Smart",
-              "spawn": "Spawn"
+              "None": "None",
+              "Smart": "Smart",
+              "Spawn": "Spawn"
             }
           },
           "radius": {
@@ -55,8 +55,8 @@
             "name": "Use Mouse Input",
             "desc": "Whether to use mouse input or only touch input",
             "items": {
-              "yes": "Yes",
-              "no": "No"
+              "Yes": "Yes",
+              "No": "No"
             }
           },
           "fade_time": {
