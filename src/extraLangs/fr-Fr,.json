@@ -21,7 +21,7 @@
             "desc": "Cliquez pour définir l'objet à la même taille que son image.",
             "link-text": "Mettre 1:1"
           },
-          "touch_event": {
+          "touch-event": {
             "name": "Événement tactile",
             "desc": "Que faire au début et à la fin du toucher",
             "items": {
@@ -30,7 +30,7 @@
               "Reset Position": "Réinitialiser la position"
             }
           },
-          "initial_state": {
+          "initial-state": {
             "name": "État initial",
             "desc": "Si Fondu, décide si le joystick commence visible ou non.",
             "items": {
@@ -51,7 +51,7 @@
             "name": "Rayon",
             "desc": "Uniquement si intelligent ou apparition. Définit le rayon dans lequel le joystick est déclenché de toute façon."
           },
-          "use_mouse_input": {
+          "use-mouse-input": {
             "name": "Utiliser l'entrée souris",
             "desc": "Utiliser l'entrée souris ou seulement l'entrée tactile",
             "items": {
@@ -59,7 +59,7 @@
               "No": "Non"
             }
           },
-          "fade_time": {
+          "fade-time": {
             "name": "Durée du fondu",
             "desc": "Uniquement si l'événement tactile est défini sur fondu. Le temps est en millisecondes."
           }

@@ -21,7 +21,7 @@
             "desc": "点击将对象设置为与其图片相同的大小。",
             "link-text": "设为1:1"
           },
-          "touch_event": {
+          "touch-event": {
             "name": "触摸事件",
             "desc": "在触摸开始和结束时执行的操作",
             "items": {
@@ -30,7 +30,7 @@
               "Reset Position": "重置位置"
             }
           },
-          "initial_state": {
+          "initial-state": {
             "name": "初始状态",
             "desc": "如果为淡出，决定摇杆是否初始可见。",
             "items": {
@@ -51,7 +51,7 @@
             "name": "半径",
             "desc": "仅在智能或生成模式下。决定摇杆被触发的半径。"
           },
-          "use_mouse_input": {
+          "use-mouse-input": {
             "name": "使用鼠标输入",
             "desc": "是否使用鼠标输入或仅使用触摸输入",
             "items": {
@@ -59,7 +59,7 @@
               "No": "否"
             }
           },
-          "fade_time": {
+          "fade-time": {
             "name": "淡出时间",
             "desc": "仅当触摸事件设置为淡出时。时间以毫秒为单位。"
           }

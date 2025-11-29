@@ -102,7 +102,7 @@ export const properties = [
   },
   {
     type: PROPERTY_TYPE.COMBO,
-    id: "touch_event",
+    id: "touch-event",
     options: {
       initialValue: "None",
       items: [
@@ -116,7 +116,7 @@ export const properties = [
   },
   {
     type: PROPERTY_TYPE.COMBO,
-    id: "initial_state",
+    id: "initial-state",
     options: {
       initialValue: "Visible",
       items: [{ Visible: "Visible" }, { Invisible: "Invisible" }],
@@ -128,7 +128,7 @@ export const properties = [
     type: PROPERTY_TYPE.COMBO,
     id: "mode",
     options: {
-      initialValue: "None",
+      initialValue: "Smart",
       items: [{ None: "None" }, { Smart: "Smart" }, { Spawn: "Spawn" }],
     },
     name: "Mode",
@@ -138,7 +138,7 @@ export const properties = [
     type: PROPERTY_TYPE.FLOAT,
     id: "radius",
     options: {
-      initialValue: 100,
+      initialValue: 50,
       interpolatable: false,
       minValue: 0,
     },
@@ -147,7 +147,7 @@ export const properties = [
   },
   {
     type: PROPERTY_TYPE.COMBO,
-    id: "use_mouse_input",
+    id: "use-mouse-input",
     options: {
       initialValue: "Yes",
       items: [{ Yes: "Yes" }, { No: "No" }],
@@ -156,10 +156,10 @@ export const properties = [
     desc: "Whether to use mouse input or only touch input",
   },
   {
-    type: PROPERTY_TYPE.FLOAT,
-    id: "fade_time",
+    type: PROPERTY_TYPE.INTEGER,
+    id: "fade-time",
     options: {
-      initialValue: 300,
+      initialValue: 100,
       interpolatable: false,
       minValue: 0,
     },

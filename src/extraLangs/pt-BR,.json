@@ -21,7 +21,7 @@
             "desc": "Clique para definir o objeto com o mesmo tamanho da imagem.",
             "link-text": "Tornar 1:1"
           },
-          "touch_event": {
+          "touch-event": {
             "name": "Evento de Toque",
             "desc": "O que fazer ao iniciar e finalizar o toque",
             "items": {
@@ -30,7 +30,7 @@
               "Reset Position": "Redefinir Posição"
             }
           },
-          "initial_state": {
+          "initial-state": {
             "name": "Estado Inicial",
             "desc": "Se Desvanecer, decide se o joystick começa visível ou não.",
             "items": {
@@ -51,7 +51,7 @@
             "name": "Raio",
             "desc": "Somente se inteligente ou gerar. Define o raio no qual o joystick é ativado de qualquer forma."
           },
-          "use_mouse_input": {
+          "use-mouse-input": {
             "name": "Usar Entrada do Mouse",
             "desc": "Se deve usar entrada do mouse ou apenas toque",
             "items": {
@@ -59,7 +59,7 @@
               "No": "Não"
             }
           },
-          "fade_time": {
+          "fade-time": {
             "name": "Tempo de Desvanecimento",
             "desc": "Somente se o evento de toque estiver definido para desvanecer. O tempo está em milissegundos."
           }

@@ -21,7 +21,7 @@
             "desc": "Click to set the object to the same size as its image.",
             "link-text": "Make 1:1"
           },
-          "touch_event": {
+          "touch-event": {
             "name": "Touch Event",
             "desc": "What to do on touch start and touch end",
             "items": {
@@ -30,7 +30,7 @@
               "Reset Position": "Reset Position"
             }
           },
-          "initial_state": {
+          "initial-state": {
             "name": "Initial State",
             "desc": "If Fade, decides if the joystick starts visible or not.",
             "items": {
@@ -51,7 +51,7 @@
             "name": "Radius",
             "desc": "Only if smart or spawn. Decides the radius in which the joystick gets triggered anyway."
           },
-          "use_mouse_input": {
+          "use-mouse-input": {
             "name": "Use Mouse Input",
             "desc": "Whether to use mouse input or only touch input",
             "items": {
@@ -59,7 +59,7 @@
               "No": "No"
             }
           },
-          "fade_time": {
+          "fade-time": {
             "name": "Fade time",
             "desc": "Only if Touch event is set to fade. The time is in milliseconds."
           }

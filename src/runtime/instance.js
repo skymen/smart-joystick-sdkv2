@@ -15,8 +15,8 @@ export default function (parentClass) {
       this.originalX = this.x;
       this.originalY = this.y;
       // Note: LINK properties (texture, size) are NOT included in runtime properties array
-      this.touchEvent = this.properties[0]; // touch_event (COMBO)
-      this.initVisible = this.touchEvent !== 1 || this.properties[1] === 0; // initial_state (COMBO)
+      this.touchEvent = this.properties[0]; // touch-event (COMBO)
+      this.initVisible = this.touchEvent !== 1 || this.properties[1] === 0; // initial-state (COMBO)
 
       if (!this.initVisible) {
         this.opacity = 0;
@@ -24,8 +24,8 @@ export default function (parentClass) {
 
       this.mode = this.properties[2]; // mode (COMBO)
       this.zoneRadius = this.properties[3]; // radius (FLOAT)
-      this.useMouseInput = this.properties[4] === 0; // use_mouse_input (COMBO)
-      this.fadeTime = this.properties[5]; // fade_time (FLOAT)
+      this.useMouseInput = this.properties[4] === 0; // use-mouse-input (COMBO)
+      this.fadeTime = this.properties[5]; // fade-time (FLOAT)
       this.fadeIn = false;
       this.fadeOut = false;
       this.dragging = false;
