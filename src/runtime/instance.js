@@ -73,10 +73,6 @@ export default function (parentClass) {
       }
     }
 
-    IsDragging() {
-      return this.dragging;
-    }
-
     CanDrag(x, y, type) {
       if (type === "mouse" && !this.useMouseInput) return false;
 

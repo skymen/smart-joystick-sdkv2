@@ -29,12 +29,11 @@ export default function (parentClass) {
     }
 
     GetInstances() {
-      // TODO
       const arr = [];
       if (this.AllObjectClasses.length === 0) {
-        this.AllObjectClasses = [...this.runtime.objects]
-          .filter((objClass) => objClass[1]._plugin === this)
-          .map(([name, objClass]) => objClass);
+        this.AllObjectClasses = Object.values(this.runtime.objects).filter(
+          (x) => x.plugin === this
+        );
       }
 
       for (const objClass of this.AllObjectClasses) {

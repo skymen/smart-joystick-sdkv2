@@ -82,7 +82,7 @@ action(
     if (this.handle) {
       this.handle.destroy();
     }
-    this.handle = objectClass.createInstance(this.layer, this.x, this.y);
+    this.handle = objectClass.createInstance(this.layer.name, this.x, this.y);
     if (this.handle) {
       this.handleUID = this.handle.uid;
     }
@@ -184,8 +184,7 @@ expression(
   function () {
     if (!this.handle) return 0;
     return this.angleDiff(this.x, this.y, this.handle.x, this.handle.y);
-  },
-  false
+  }
 );
 
 expression(
@@ -202,8 +201,7 @@ expression(
   function () {
     if (!this.handle) return 0;
     return this.distance(this.x, this.y, this.handle.x, this.handle.y);
-  },
-  false
+  }
 );
 
 expression(
@@ -222,8 +220,7 @@ expression(
     const dist = this.distance(this.x, this.y, this.handle.x, this.handle.y);
     const radius = this.joystickRadius();
     return dist / radius;
-  },
-  false
+  }
 );
 
 expression(
@@ -291,8 +288,7 @@ expression(
   function () {
     if (!this.handle) return 0;
     return this.handle.x - this.x;
-  },
-  false
+  }
 );
 
 expression(
@@ -309,8 +305,7 @@ expression(
   function () {
     if (!this.handle) return 0;
     return this.handle.y - this.y;
-  },
-  false
+  }
 );
 
 expression(
@@ -329,8 +324,7 @@ expression(
     const dist = this.handle.x - this.x;
     const radius = this.joystickRadius();
     return dist / radius;
-  },
-  false
+  }
 );
 
 expression(
@@ -349,6 +343,5 @@ expression(
     const dist = this.handle.y - this.y;
     const radius = this.joystickRadius();
     return dist / radius;
-  },
-  false
+  }
 );
