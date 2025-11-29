@@ -1,0 +1,198 @@
+{
+  "languageTag": "ko-KR",
+  "fileDescription": "skymen_smartjoystick용 문자열.",
+  "text": {
+    "plugins": {
+      "skymen_smartjoystick": {
+        "name": "스마트 조이스틱",
+        "description": "스마트 조이스틱 플러그인",
+        "help-url": "https://www.construct.net",
+        "aceCategories": {
+          "general": "일반"
+        },
+        "properties": {
+          "texture": {
+            "name": "텍스처",
+            "desc": "오브젝트의 텍스처를 편집하려면 클릭하세요.",
+            "link-text": "편집"
+          },
+          "size": {
+            "name": "크기",
+            "desc": "오브젝트를 이미지와 동일한 크기로 설정하려면 클릭하세요.",
+            "link-text": "1:1로 만들기"
+          },
+          "touch_event": {
+            "name": "터치 이벤트",
+            "desc": "터치 시작 및 종료 시 동작",
+            "items": {
+              "none": "없음",
+              "fade": "페이드",
+              "reset": "위치 초기화"
+            }
+          },
+          "initial_state": {
+            "name": "초기 상태",
+            "desc": "페이드일 경우, 조이스틱이 처음에 보이는지 여부를 결정합니다.",
+            "items": {
+              "visible": "보임",
+              "invisible": "숨김"
+            }
+          },
+          "mode": {
+            "name": "모드",
+            "desc": "없음은 일반 조이스틱처럼 동작합니다. 스마트는 핸들이 너무 멀어지면 따라갑니다. 스폰은 반경 내 아무 곳이나 클릭하면 조이스틱이 생성되고 일반 조이스틱처럼 동작합니다.",
+            "items": {
+              "none": "없음",
+              "smart": "스마트",
+              "spawn": "스폰"
+            }
+          },
+          "radius": {
+            "name": "반경",
+            "desc": "스마트 또는 스폰일 때만 해당. 조이스틱이 무조건 작동하는 반경을 결정합니다."
+          },
+          "use_mouse_input": {
+            "name": "마우스 입력 사용",
+            "desc": "마우스 입력을 사용할지 또는 터치 입력만 사용할지 여부",
+            "items": {
+              "yes": "예",
+              "no": "아니오"
+            }
+          },
+          "fade_time": {
+            "name": "페이드 시간",
+            "desc": "터치 이벤트가 페이드로 설정된 경우에만 해당. 시간은 밀리초 단위입니다."
+          }
+        },
+        "actions": {
+          "BindHandle": {
+            "list-name": "핸들 바인딩",
+            "display-text": "{0}을(를) 조이스틱 핸들에 바인딩",
+            "description": "핸들 바인딩",
+            "params": {
+              "handle": {
+                "name": "핸들",
+                "desc": "바인딩할 핸들."
+              }
+            }
+          },
+          "SetEvent": {
+            "list-name": "터치 이벤트 설정",
+            "display-text": "터치 이벤트를 {0}(으)로 설정",
+            "description": "터치 이벤트 설정",
+            "params": {
+              "event": {
+                "name": "이벤트",
+                "desc": "설정할 이벤트",
+                "items": {
+                  "none": "없음",
+                  "fade": "페이드",
+                  "spawn": "스폰"
+                }
+              }
+            }
+          },
+          "SetMode": {
+            "list-name": "모드 설정",
+            "display-text": "모드를 {0}(으)로 설정",
+            "description": "모드 설정",
+            "params": {
+              "mode": {
+                "name": "모드",
+                "desc": "설정할 모드",
+                "items": {
+                  "none": "없음",
+                  "smart": "스마트",
+                  "spawn": "스폰"
+                }
+              }
+            }
+          },
+          "SetRadius": {
+            "list-name": "반경 설정",
+            "display-text": "반경을 {0}(으)로 설정",
+            "description": "반경 설정",
+            "params": {
+              "radius": {
+                "name": "반경",
+                "desc": "설정할 반경"
+              }
+            }
+          }
+        },
+        "conditions": {
+          "IsDragging": {
+            "list-name": "드래그 중",
+            "display-text": "드래그 중",
+            "description": "조이스틱이 사용 중일 때 참",
+            "params": {}
+          },
+          "OnDragStart": {
+            "list-name": "드래그 시작 시",
+            "display-text": "드래그 시작 시",
+            "description": "조이스틱 사용이 시작될 때 트리거됨",
+            "params": {}
+          },
+          "OnDragStop": {
+            "list-name": "드래그 종료 시",
+            "display-text": "드래그 종료 시",
+            "description": "조이스틱 사용이 끝날 때 트리거됨",
+            "params": {}
+          }
+        },
+        "expressions": {
+          "JoystickAngle": {
+            "translated-name": "JoystickAngle",
+            "description": "조이스틱의 각도를 반환",
+            "params": {}
+          },
+          "JoystickDirX": {
+            "translated-name": "JoystickDirX",
+            "description": "조이스틱의 X 변위를 반환",
+            "params": {}
+          },
+          "JoystickDirY": {
+            "translated-name": "JoystickDirY",
+            "description": "조이스틱의 Y 변위를 반환",
+            "params": {}
+          },
+          "JoystickDistance": {
+            "translated-name": "JoystickDistance",
+            "description": "조이스틱의 거리를 반환",
+            "params": {}
+          },
+          "JoystickForce": {
+            "translated-name": "JoystickForce",
+            "description": "조이스틱의 힘을 반환",
+            "params": {}
+          },
+          "JoystickForceX": {
+            "translated-name": "JoystickForceX",
+            "description": "조이스틱의 X 방향 힘을 반환",
+            "params": {}
+          },
+          "JoystickForceY": {
+            "translated-name": "JoystickForceY",
+            "description": "조이스틱의 Y 방향 힘을 반환",
+            "params": {}
+          },
+          "JoystickRadius": {
+            "translated-name": "JoystickRadius",
+            "description": "조이스틱의 반경을 반환",
+            "params": {}
+          },
+          "JoystickX": {
+            "translated-name": "JoystickX",
+            "description": "조이스틱의 X 위치를 반환",
+            "params": {}
+          },
+          "JoystickY": {
+            "translated-name": "JoystickY",
+            "description": "조이스틱의 Y 위치를 반환",
+            "params": {}
+          }
+        }
+      }
+    }
+  }
+}

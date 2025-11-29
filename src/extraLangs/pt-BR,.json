@@ -1,0 +1,198 @@
+{
+  "languageTag": "pt-BR",
+  "fileDescription": "Strings para skymen_smartjoystick.",
+  "text": {
+    "plugins": {
+      "skymen_smartjoystick": {
+        "name": "Joystick Inteligente",
+        "description": "Um plugin de joystick inteligente",
+        "help-url": "https://www.construct.net",
+        "aceCategories": {
+          "general": "geral"
+        },
+        "properties": {
+          "texture": {
+            "name": "Textura",
+            "desc": "Clique para editar a textura do objeto.",
+            "link-text": "Editar"
+          },
+          "size": {
+            "name": "Tamanho",
+            "desc": "Clique para definir o objeto com o mesmo tamanho da imagem.",
+            "link-text": "Tornar 1:1"
+          },
+          "touch_event": {
+            "name": "Evento de Toque",
+            "desc": "O que fazer ao iniciar e finalizar o toque",
+            "items": {
+              "none": "Nenhum",
+              "fade": "Desvanecer",
+              "reset": "Redefinir Posição"
+            }
+          },
+          "initial_state": {
+            "name": "Estado Inicial",
+            "desc": "Se Desvanecer, decide se o joystick começa visível ou não.",
+            "items": {
+              "visible": "Visível",
+              "invisible": "Invisível"
+            }
+          },
+          "mode": {
+            "name": "Modo",
+            "desc": "Nenhum se comporta como um joystick comum. Inteligente segue o controle se ele se afastar demais. Gerar faz o joystick aparecer se clicar em qualquer lugar dentro do raio e então se comporta como um joystick comum.",
+            "items": {
+              "none": "Nenhum",
+              "smart": "Inteligente",
+              "spawn": "Gerar"
+            }
+          },
+          "radius": {
+            "name": "Raio",
+            "desc": "Somente se inteligente ou gerar. Define o raio no qual o joystick é ativado de qualquer forma."
+          },
+          "use_mouse_input": {
+            "name": "Usar Entrada do Mouse",
+            "desc": "Se deve usar entrada do mouse ou apenas toque",
+            "items": {
+              "yes": "Sim",
+              "no": "Não"
+            }
+          },
+          "fade_time": {
+            "name": "Tempo de Desvanecimento",
+            "desc": "Somente se o evento de toque estiver definido para desvanecer. O tempo está em milissegundos."
+          }
+        },
+        "actions": {
+          "BindHandle": {
+            "list-name": "Vincular Controle",
+            "display-text": "Vincular {0} ao controle do joystick",
+            "description": "Vincular Controle",
+            "params": {
+              "handle": {
+                "name": "Controle",
+                "desc": "O controle a ser vinculado."
+              }
+            }
+          },
+          "SetEvent": {
+            "list-name": "Definir Evento de Toque",
+            "display-text": "Definir evento de toque para {0}",
+            "description": "Definir Evento de Toque",
+            "params": {
+              "event": {
+                "name": "Evento",
+                "desc": "O evento a ser definido",
+                "items": {
+                  "none": "Nenhum",
+                  "fade": "Desvanecer",
+                  "spawn": "Gerar"
+                }
+              }
+            }
+          },
+          "SetMode": {
+            "list-name": "Definir Modo",
+            "display-text": "Definir modo para {0}",
+            "description": "Definir Modo",
+            "params": {
+              "mode": {
+                "name": "Modo",
+                "desc": "O modo a ser definido",
+                "items": {
+                  "none": "Nenhum",
+                  "smart": "Inteligente",
+                  "spawn": "Gerar"
+                }
+              }
+            }
+          },
+          "SetRadius": {
+            "list-name": "Definir Raio",
+            "display-text": "Definir raio para {0}",
+            "description": "Definir raio",
+            "params": {
+              "radius": {
+                "name": "Raio",
+                "desc": "O raio a ser definido"
+              }
+            }
+          }
+        },
+        "conditions": {
+          "IsDragging": {
+            "list-name": "Está arrastando",
+            "display-text": "Está arrastando",
+            "description": "Verdadeiro quando o joystick está sendo usado",
+            "params": {}
+          },
+          "OnDragStart": {
+            "list-name": "Ao iniciar arrasto",
+            "display-text": "Ao iniciar arrasto",
+            "description": "Disparado quando o joystick começa a ser usado",
+            "params": {}
+          },
+          "OnDragStop": {
+            "list-name": "Ao finalizar arrasto",
+            "display-text": "Ao finalizar arrasto",
+            "description": "Disparado quando o joystick para de ser usado",
+            "params": {}
+          }
+        },
+        "expressions": {
+          "JoystickAngle": {
+            "translated-name": "JoystickAngulo",
+            "description": "Retorna o ângulo do joystick",
+            "params": {}
+          },
+          "JoystickDirX": {
+            "translated-name": "JoystickDirX",
+            "description": "Retorna o deslocamento X do joystick",
+            "params": {}
+          },
+          "JoystickDirY": {
+            "translated-name": "JoystickDirY",
+            "description": "Retorna o deslocamento Y do joystick",
+            "params": {}
+          },
+          "JoystickDistance": {
+            "translated-name": "JoystickDistancia",
+            "description": "Retorna a distância do joystick",
+            "params": {}
+          },
+          "JoystickForce": {
+            "translated-name": "JoystickForca",
+            "description": "Retorna a força do joystick",
+            "params": {}
+          },
+          "JoystickForceX": {
+            "translated-name": "JoystickForcaX",
+            "description": "Retorna a força X do joystick",
+            "params": {}
+          },
+          "JoystickForceY": {
+            "translated-name": "JoystickForcaY",
+            "description": "Retorna a força Y do joystick",
+            "params": {}
+          },
+          "JoystickRadius": {
+            "translated-name": "JoystickRaio",
+            "description": "Retorna o raio do joystick",
+            "params": {}
+          },
+          "JoystickX": {
+            "translated-name": "JoystickX",
+            "description": "Retorna a posição X do joystick",
+            "params": {}
+          },
+          "JoystickY": {
+            "translated-name": "JoystickY",
+            "description": "Retorna a posição Y do joystick",
+            "params": {}
+          }
+        }
+      }
+    }
+  }
+}
