@@ -1,11 +1,11 @@
-<img src="./src/icon.svg?rand=8697" width="100" /><br>
-# Sample Addon
-<i>Description</i> <br>
+<img src="./src/icon.svg" width="100" /><br>
+# Smart Joystick
+<i>A smart joystick plugin</i> <br>
 ### Version 1.0.0.0
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/ConstructFund/construct-addon-wizard-scaffold/releases/download/sample_addon-1.0.0.0.c3addon/sample_addon-1.0.0.0.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/better-joystick/releases/download/skymen_smartJoystick-1.0.0.0.c3addon/skymen_smartJoystick-1.0.0.0.c3addon)
 <br>
-<sub> [See all releases](https://github.com/ConstructFund/construct-addon-wizard-scaffold/releases) </sub> <br>
+<sub> [See all releases](https://github.com/skymen/better-joystick/releases) </sub> <br>
 
 ---
 <b><u>Author:</u></b> skymen <br>
@@ -40,32 +40,46 @@ npm run dev
 ## Properties
 | Property Name | Description | Type |
 | --- | --- | --- |
+| Texture | Click to edit the object's texture. | link |
+| Size | Click to set the object to the same size as its image. | link |
+| Touch Event | What to do on touch start and touch end | combo |
+| Initial State | If Fade, decides if the joystick starts visible or not. | combo |
+| Mode | None behaves like a regular joystick. Smart follows the handle if it gets too far. Spawn spawns the joystick if clicked anywhere within the radius then behaves like a regular joystick. | combo |
+| Radius | Only if smart or spawn. Decides the radius in which the joystick gets triggered anyway. | float |
+| Use Mouse Input | Whether to use mouse input or only touch input | combo |
+| Fade time | Only if Touch event is set to fade. The time is in milliseconds. | float |
 
 
 ---
 ## Actions
 | Action | Description | Params
 | --- | --- | --- |
-| Sample Action | This is a sample action | Param1             *(string)* <br> |
-| Sample Action Async | This is a sample action |  |
-| Sample Action Combo | This is a sample action | Param1             *(combo)* <br> |
-| Sample Action | This is a sample action | Param1             *(string)* <br> |
+| Bind Handle | Bind Handle | Handle             *(object)* <br> |
+| Set Touch Event | Set Touch Event | Event             *(combo)* <br> |
+| Set Mode | Set Mode | Mode             *(combo)* <br> |
+| Set Radius | Set radius | Radius             *(number)* <br> |
 
 
 ---
 ## Conditions
 | Condition | Description | Params
 | --- | --- | --- |
-| Sample Condition | This is a sample condition | Param1 *(string)* <br> |
-| Sample Trigger | This is a sample trigger |  |
-| Sample Condition | This is a sample condition | Param1 *(combo)* <br> |
-| Sample Condition | This is a sample condition |  |
+| Is dragging | True when the joystick is used |  |
+| On drag start | Triggered when the joystick starts being used |  |
+| On drag end | Triggered when the joystick stops being used |  |
 
 
 ---
 ## Expressions
 | Expression | Description | Return Type | Params
 | --- | --- | --- | --- |
-| Expression | Sample Expression | number |  | 
-| Expression2 | Sample Expression | string |  | 
-| SampleExpression | This is a sample expression | string |  | 
+| JoystickAngle | Returns the joystick's angle | number |  | 
+| JoystickDirX | Returns the joystick's X displacement | number |  | 
+| JoystickDirY | Returns the joystick's Y displacement | number |  | 
+| JoystickDistance | Returns the joystick's distance | number |  | 
+| JoystickForce | Returns the joystick's force | number |  | 
+| JoystickForceX | Returns the joystick's X force | number |  | 
+| JoystickForceY | Returns the joystick's Y force | number |  | 
+| JoystickRadius | Returns the joystick's radius | number |  | 
+| JoystickX | Returns the joystick's X position | number |  | 
+| JoystickY | Returns the joystick's Y position | number |  | 

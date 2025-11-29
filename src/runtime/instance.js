@@ -14,16 +14,18 @@ export default function (parentClass) {
       this.handleUID = -1;
       this.originX = this.x;
       this.originY = this.y;
-      this.touchEvent = this.properties[0];
-      this.initVisible = this.touchEvent !== 1 || this.properties[1] === 0;
+      // Note: LINK properties (texture, size) are NOT included in runtime properties array
+      this.touchEvent = this.properties[0]; // touch_event (COMBO)
+      this.initVisible = this.touchEvent !== 1 || this.properties[1] === 0; // initial_state (COMBO)
 
       if (!this.initVisible) {
         this.opacity = 0;
       }
 
-      this.mode = this.properties[2];
-      this.zoneRadius = this.properties[3];
-      this.fadeTime = this.properties[5];
+      this.mode = this.properties[2]; // mode (COMBO)
+      this.zoneRadius = this.properties[3]; // radius (FLOAT)
+      this.useMouseInput = this.properties[4] === 0; // use_mouse_input (COMBO)
+      this.fadeTime = this.properties[5]; // fade_time (FLOAT)
       this.fadeIn = false;
       this.fadeOut = false;
       this.dragging = false;
@@ -31,7 +33,6 @@ export default function (parentClass) {
 
       // Touch Values
       this.dragSource = "<none>";
-      this.useMouseInput = this.properties[4] === 0;
 
       this._setTicking(true);
     }
