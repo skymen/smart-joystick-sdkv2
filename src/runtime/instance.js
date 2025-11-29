@@ -173,6 +173,7 @@ export default function (parentClass) {
     }
 
     _tick() {
+      debugger;
       if (this.justLoaded) this.AfterLoad();
 
       if (this.fadeIn) {
