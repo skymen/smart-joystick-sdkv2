@@ -81,7 +81,6 @@ export default function (parentClass) {
     }
 
     _OnInputDown(source, canvasX, canvasY) {
-      debugger;
       const instances = this.GetInstances();
       let selectedInst = null;
       let selectedX = 0;
@@ -91,7 +90,7 @@ export default function (parentClass) {
         if (inst.IsDragging()) continue;
 
         const layer = inst.layer;
-        const [layerX, layerY] = layer.cssCoordsToLayer(canvasX, canvasY);
+        const [layerX, layerY] = layer.cssPxToLayer(canvasX, canvasY);
 
         if (!inst.CanDrag(layerX, layerY, source)) continue;
 
@@ -119,7 +118,6 @@ export default function (parentClass) {
     }
 
     _OnInputMove(source, canvasX, canvasY) {
-      debugger;
       const instances = this.GetInstances();
       for (const inst of instances) {
         if (
@@ -129,13 +127,12 @@ export default function (parentClass) {
           continue;
 
         const layer = inst.layer;
-        const [layerX, layerY] = layer.cssCoordsToLayer(canvasX, canvasY);
+        const [layerX, layerY] = layer.cssPxToLayer(canvasX, canvasY);
         inst.OnMove(layerX, layerY);
       }
     }
 
     _OnInputUp(source) {
-      debugger;
       const instances = this.GetInstances();
       for (const inst of instances) {
         if (inst.IsDragging() && inst.GetDragSource() === source) {

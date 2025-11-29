@@ -57,6 +57,7 @@ export default function (parentClass) {
     }
 
     dispatch(tag) {
+      this.events = this.events || {};
       if (this.events[tag]) {
         this.events[tag].forEach((event) => {
           if (event.options && event.options.params) {
@@ -214,29 +215,31 @@ export default function (parentClass) {
     }
 
     _draw(renderer) {
-      //TODO
-      debugger;
-      const imageInfo = this._objectClass.getImageInfo();
-      const texture = imageInfo.getTexture();
+      const imageInfo = this.objectType.getImageInfo();
+      const texture = imageInfo.getTexture(renderer);
 
       if (!texture) return; // dynamic texture load which hasn't completed yet; can't draw anything
 
-      const quad = this.getBoundingQuad();
+      let quad = this.getBoundingQuad();
       const rcTex = imageInfo.getTexRect();
 
       renderer.setTexture(texture);
-      renderer.setAlphaBlendMode();
-      renderer.setTextureFillMode();
 
       if (this.runtime.isPixelRoundingEnabled) {
         const ox = Math.round(this.x) - this.x;
         const oy = Math.round(this.y) - this.y;
-        const tempQuad = this.getBoundingQuad();
-        tempQuad.offset(ox, oy);
-        renderer.quad3(tempQuad, rcTex);
-      } else {
-        renderer.quad3(quad, rcTex);
+
+        if (ox !== 0 && oy !== 0) {
+          quad = new DOMQuad(
+            new DOMPoint(quad.p1.x + ox, quad.p1.y + oy),
+            new DOMPoint(quad.p2.x + ox, quad.p2.y + oy),
+            new DOMPoint(quad.p3.x + ox, quad.p3.y + oy),
+            new DOMPoint(quad.p4.x + ox, quad.p4.y + oy)
+          );
+        }
       }
+
+      renderer.quad3(quad, rcTex);
     }
 
     _release() {

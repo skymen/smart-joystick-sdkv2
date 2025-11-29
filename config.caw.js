@@ -64,7 +64,7 @@ export const info = {
   // PLUGIN only
   AddCommonACEs: {
     Position: true,
-    SceneGraph: false,
+    SceneGraph: true,
     Size: true,
     Angle: true,
     Appearance: true,
