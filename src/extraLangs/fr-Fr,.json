@@ -25,26 +25,26 @@
             "name": "Événement tactile",
             "desc": "Que faire au début et à la fin du toucher",
             "items": {
-              "none": "Aucun",
-              "fade": "Fondu",
-              "reset": "Réinitialiser la position"
+              "None": "Aucun",
+              "Fade": "Fondu",
+              "Reset Position": "Réinitialiser la position"
             }
           },
           "initial_state": {
             "name": "État initial",
             "desc": "Si Fondu, décide si le joystick commence visible ou non.",
             "items": {
-              "visible": "Visible",
-              "invisible": "Invisible"
+              "Visible": "Visible",
+              "Invisible": "Invisible"
             }
           },
           "mode": {
             "name": "Mode",
             "desc": "Aucun se comporte comme un joystick classique. Intelligent suit la poignée si elle s'éloigne trop. Apparition fait apparaître le joystick si on clique n'importe où dans le rayon puis se comporte comme un joystick classique.",
             "items": {
-              "none": "Aucun",
-              "smart": "Intelligent",
-              "spawn": "Apparition"
+              "None": "Aucun",
+              "Smart": "Intelligent",
+              "Spawn": "Apparition"
             }
           },
           "radius": {
@@ -55,12 +55,12 @@
             "name": "Utiliser l'entrée souris",
             "desc": "Utiliser l'entrée souris ou seulement l'entrée tactile",
             "items": {
-              "yes": "Oui",
-              "no": "Non"
+              "Yes": "Oui",
+              "No": "Non"
             }
           },
           "fade_time": {
-            "name": "Temps de fondu",
+            "name": "Durée du fondu",
             "desc": "Uniquement si l'événement tactile est défini sur fondu. Le temps est en millisecondes."
           }
         },
@@ -142,53 +142,53 @@
         },
         "expressions": {
           "JoystickAngle": {
-            "translated-name": "JoystickAngle",
-            "description": "Renvoie l'angle du joystick",
+            "translated-name": "AngleJoystick",
+            "description": "Retourne l'angle du joystick",
             "params": {}
           },
           "JoystickDirX": {
-            "translated-name": "JoystickDirX",
-            "description": "Renvoie le déplacement X du joystick",
+            "translated-name": "DirectionJoystickX",
+            "description": "Retourne le déplacement X du joystick",
             "params": {}
           },
           "JoystickDirY": {
-            "translated-name": "JoystickDirY",
-            "description": "Renvoie le déplacement Y du joystick",
+            "translated-name": "DirectionJoystickY",
+            "description": "Retourne le déplacement Y du joystick",
             "params": {}
           },
           "JoystickDistance": {
-            "translated-name": "JoystickDistance",
-            "description": "Renvoie la distance du joystick",
+            "translated-name": "DistanceJoystick",
+            "description": "Retourne la distance du joystick",
             "params": {}
           },
           "JoystickForce": {
-            "translated-name": "JoystickForce",
-            "description": "Renvoie la force du joystick",
+            "translated-name": "ForceJoystick",
+            "description": "Retourne la force du joystick",
             "params": {}
           },
           "JoystickForceX": {
-            "translated-name": "JoystickForceX",
-            "description": "Renvoie la force X du joystick",
+            "translated-name": "ForceJoystickX",
+            "description": "Retourne la force X du joystick",
             "params": {}
           },
           "JoystickForceY": {
-            "translated-name": "JoystickForceY",
-            "description": "Renvoie la force Y du joystick",
+            "translated-name": "ForceJoystickY",
+            "description": "Retourne la force Y du joystick",
             "params": {}
           },
           "JoystickRadius": {
-            "translated-name": "JoystickRadius",
-            "description": "Renvoie le rayon du joystick",
+            "translated-name": "RayonJoystick",
+            "description": "Retourne le rayon du joystick",
             "params": {}
           },
           "JoystickX": {
             "translated-name": "JoystickX",
-            "description": "Renvoie la position X du joystick",
+            "description": "Retourne la position X du joystick",
             "params": {}
           },
           "JoystickY": {
             "translated-name": "JoystickY",
-            "description": "Renvoie la position Y du joystick",
+            "description": "Retourne la position Y du joystick",
             "params": {}
           }
         }

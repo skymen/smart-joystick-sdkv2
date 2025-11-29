@@ -25,26 +25,26 @@
             "name": "Evento de toque",
             "desc": "Qué hacer al iniciar y finalizar el toque",
             "items": {
-              "none": "Ninguno",
-              "fade": "Desvanecer",
-              "reset": "Restablecer posición"
+              "None": "Ninguno",
+              "Fade": "Desvanecer",
+              "Reset Position": "Restablecer posición"
             }
           },
           "initial_state": {
             "name": "Estado inicial",
             "desc": "Si es Desvanecer, decide si el joystick comienza visible o no.",
             "items": {
-              "visible": "Visible",
-              "invisible": "Invisible"
+              "Visible": "Visible",
+              "Invisible": "Invisible"
             }
           },
           "mode": {
             "name": "Modo",
-            "desc": "Ninguno se comporta como un joystick normal. Inteligente sigue el mando si se aleja demasiado. Generar crea el joystick si se pulsa en cualquier parte dentro del radio y luego se comporta como un joystick normal.",
+            "desc": "Ninguno se comporta como un joystick normal. Inteligente sigue el mango si se aleja demasiado. Generar crea el joystick si se pulsa en cualquier parte dentro del radio y luego se comporta como un joystick normal.",
             "items": {
-              "none": "Ninguno",
-              "smart": "Inteligente",
-              "spawn": "Generar"
+              "None": "Ninguno",
+              "Smart": "Inteligente",
+              "Spawn": "Generar"
             }
           },
           "radius": {
@@ -55,8 +55,8 @@
             "name": "Usar entrada de ratón",
             "desc": "Si se debe usar la entrada del ratón o solo la entrada táctil",
             "items": {
-              "yes": "Sí",
-              "no": "No"
+              "Yes": "Sí",
+              "No": "No"
             }
           },
           "fade_time": {
@@ -66,13 +66,13 @@
         },
         "actions": {
           "BindHandle": {
-            "list-name": "Vincular mando",
-            "display-text": "Vincular {0} al mando del joystick",
-            "description": "Vincular mando",
+            "list-name": "Vincular mango",
+            "display-text": "Vincular {0} al mango del joystick",
+            "description": "Vincular mango",
             "params": {
               "handle": {
-                "name": "Mando",
-                "desc": "El mando a vincular."
+                "name": "Mango",
+                "desc": "El mango a vincular."
               }
             }
           },

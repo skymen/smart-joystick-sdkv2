@@ -25,26 +25,26 @@
             "name": "Evento de Toque",
             "desc": "O que fazer ao iniciar e finalizar o toque",
             "items": {
-              "none": "Nenhum",
-              "fade": "Desvanecer",
-              "reset": "Redefinir Posição"
+              "None": "Nenhum",
+              "Fade": "Desvanecer",
+              "Reset Position": "Redefinir Posição"
             }
           },
           "initial_state": {
             "name": "Estado Inicial",
             "desc": "Se Desvanecer, decide se o joystick começa visível ou não.",
             "items": {
-              "visible": "Visível",
-              "invisible": "Invisível"
+              "Visible": "Visível",
+              "Invisible": "Invisível"
             }
           },
           "mode": {
             "name": "Modo",
-            "desc": "Nenhum se comporta como um joystick comum. Inteligente segue o controle se ele se afastar demais. Gerar faz o joystick aparecer se clicar em qualquer lugar dentro do raio e então se comporta como um joystick comum.",
+            "desc": "Nenhum se comporta como um joystick normal. Inteligente segue o controle se ele se afastar demais. Gerar faz o joystick aparecer se clicar em qualquer lugar dentro do raio e então se comporta como um joystick normal.",
             "items": {
-              "none": "Nenhum",
-              "smart": "Inteligente",
-              "spawn": "Gerar"
+              "None": "Nenhum",
+              "Smart": "Inteligente",
+              "Spawn": "Gerar"
             }
           },
           "radius": {
@@ -55,8 +55,8 @@
             "name": "Usar Entrada do Mouse",
             "desc": "Se deve usar entrada do mouse ou apenas toque",
             "items": {
-              "yes": "Sim",
-              "no": "Não"
+              "Yes": "Sim",
+              "No": "Não"
             }
           },
           "fade_time": {

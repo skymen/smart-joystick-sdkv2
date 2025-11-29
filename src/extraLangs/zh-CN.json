@@ -18,33 +18,33 @@
           },
           "size": {
             "name": "大小",
-            "desc": "点击将对象设置为与其图像相同的大小。",
+            "desc": "点击将对象设置为与其图片相同的大小。",
             "link-text": "设为1:1"
           },
           "touch_event": {
             "name": "触摸事件",
             "desc": "在触摸开始和结束时执行的操作",
             "items": {
-              "none": "无",
-              "fade": "淡出",
-              "reset": "重置位置"
+              "None": "无",
+              "Fade": "淡出",
+              "Reset Position": "重置位置"
             }
           },
           "initial_state": {
             "name": "初始状态",
             "desc": "如果为淡出，决定摇杆是否初始可见。",
             "items": {
-              "visible": "可见",
-              "invisible": "不可见"
+              "Visible": "可见",
+              "Invisible": "不可见"
             }
           },
           "mode": {
             "name": "模式",
-            "desc": "无时表现为普通摇杆。智能模式下如果手柄太远则跟随。生成模式下在半径范围内点击会生成摇杆，然后表现为普通摇杆。",
+            "desc": "无时表现为普通摇杆。智能模式下如果手柄太远会跟随。生成模式下在半径内任意位置点击会生成摇杆，然后表现为普通摇杆。",
             "items": {
-              "none": "无",
-              "smart": "智能",
-              "spawn": "生成"
+              "None": "无",
+              "Smart": "智能",
+              "Spawn": "生成"
             }
           },
           "radius": {
@@ -55,13 +55,13 @@
             "name": "使用鼠标输入",
             "desc": "是否使用鼠标输入或仅使用触摸输入",
             "items": {
-              "yes": "是",
-              "no": "否"
+              "Yes": "是",
+              "No": "否"
             }
           },
           "fade_time": {
             "name": "淡出时间",
-            "desc": "仅当触摸事件设置为淡出时。时间单位为毫秒。"
+            "desc": "仅当触摸事件设置为淡出时。时间以毫秒为单位。"
           }
         },
         "actions": {
@@ -128,14 +128,14 @@
             "params": {}
           },
           "OnDragStart": {
-            "list-name": "开始拖动时",
-            "display-text": "开始拖动时",
+            "list-name": "拖动开始时",
+            "display-text": "拖动开始时",
             "description": "当摇杆开始被使用时触发",
             "params": {}
           },
           "OnDragStop": {
-            "list-name": "结束拖动时",
-            "display-text": "结束拖动时",
+            "list-name": "拖动结束时",
+            "display-text": "拖动结束时",
             "description": "当摇杆停止被使用时触发",
             "params": {}
           }
