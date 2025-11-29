@@ -5,17 +5,17 @@ export default function (parentClass) {
     }
 
     _onCreate() {
-      this.GetImageInfo().LoadAsset(this._runtime);
+      this.runtime.assets.loadImageAsset(this.getImageInfo());
     }
 
     _loadTextures(renderer) {
-      return this.GetImageInfo().LoadStaticTexture(renderer, {
-        linearSampling: this._runtime.IsLinearSampling(),
+      return renderer.loadTextureForImageInfo(this.getImageInfo(), {
+        sampling: this.runtime.sampling,
       });
     }
 
-    _releaseTextures() {
-      this.GetImageInfo().ReleaseTexture();
+    _releaseTextures(renderer) {
+      renderer.releaseTextureForImageInfo(this.getImageInfo());
     }
   };
 }

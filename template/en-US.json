@@ -1,117 +1,192 @@
 {
   "languageTag": "en-US",
-  "fileDescription": "Strings for sample_addon.",
+  "fileDescription": "Strings for skymen_smartjoystick.",
   "text": {
     "plugins": {
-      "sample_addon": {
-        "name": "Sample Addon",
-        "description": "Description",
+      "skymen_smartjoystick": {
+        "name": "Smart Joystick",
+        "description": "A smart joystick plugin",
         "help-url": "https://www.construct.net",
         "aceCategories": {
-          "Aces_Files_In_Category_Folder": "Aces_Files_In_Category_Folder",
-          "Ace_Folders_In_Category_Folder": "Ace_Folders_In_Category_Folder",
-          "Aces_In_Single_File": "Aces_In_Single_File"
+          "general": "general"
         },
-        "properties": {},
+        "properties": {
+          "texture": {
+            "name": "Texture",
+            "desc": "Click to edit the object's texture."
+          },
+          "size": {
+            "name": "Size",
+            "desc": "Click to set the object to the same size as its image."
+          },
+          "touch_event": {
+            "name": "Touch Event",
+            "desc": "What to do on touch start and touch end",
+            "items": {
+              "none": "None",
+              "fade": "Fade",
+              "reset": "Reset Position"
+            }
+          },
+          "initial_state": {
+            "name": "Initial State",
+            "desc": "If Fade, decides if the joystick starts visible or not.",
+            "items": {
+              "visible": "Visible",
+              "invisible": "Invisible"
+            }
+          },
+          "mode": {
+            "name": "Mode",
+            "desc": "None behaves like a regular joystick. Smart follows the handle if it gets too far. Spawn spawns the joystick if clicked anywhere within the radius then behaves like a regular joystick.",
+            "items": {
+              "none": "None",
+              "smart": "Smart",
+              "spawn": "Spawn"
+            }
+          },
+          "radius": {
+            "name": "Radius",
+            "desc": "Only if smart or spawn. Decides the radius in which the joystick gets triggered anyway."
+          },
+          "use_mouse_input": {
+            "name": "Use Mouse Input",
+            "desc": "Whether to use mouse input or only touch input",
+            "items": {
+              "yes": "Yes",
+              "no": "No"
+            }
+          },
+          "fade_time": {
+            "name": "Fade time",
+            "desc": "Only if Touch event is set to fade. The time is in milliseconds."
+          }
+        },
         "actions": {
-          "Action": {
-            "list-name": "Sample Action",
-            "display-text": "Sample Action {0}",
-            "description": "This is a sample action",
+          "BindHandle": {
+            "list-name": "Bind Handle",
+            "display-text": "Bind {0} to joystick handle",
+            "description": "Bind Handle",
             "params": {
-              "param1": {
-                "name": "Param1",
-                "desc": "This is a sample param"
+              "handle": {
+                "name": "Handle",
+                "desc": "The Handle to bind."
               }
             }
           },
-          "AsyncAction": {
-            "list-name": "Sample Action Async",
-            "display-text": "Sample Action Async",
-            "description": "This is a sample action",
-            "params": {}
-          },
-          "ActionCombo": {
-            "list-name": "Sample Action Combo",
-            "display-text": "Sample Action Combo {0}",
-            "description": "This is a sample action",
+          "SetEvent": {
+            "list-name": "Set Touch Event",
+            "display-text": "Set touch event to {0}",
+            "description": "Set Touch Event",
             "params": {
-              "param1": {
-                "name": "Param1",
-                "desc": "This is a sample param",
+              "event": {
+                "name": "Event",
+                "desc": "The event to set",
                 "items": {
-                  "test": "test",
-                  "test2": "test2"
+                  "none": "None",
+                  "fade": "Fade",
+                  "spawn": "Spawn"
                 }
               }
             }
           },
-          "SampleAction": {
-            "list-name": "Sample Action",
-            "display-text": "Sample Action {0}",
-            "description": "This is a sample action",
+          "SetMode": {
+            "list-name": "Set Mode",
+            "display-text": "Set mode to {0}",
+            "description": "Set Mode",
             "params": {
-              "param1": {
-                "name": "Param1",
-                "desc": "This is a sample param"
+              "mode": {
+                "name": "Mode",
+                "desc": "The mode to set",
+                "items": {
+                  "none": "None",
+                  "smart": "Smart",
+                  "spawn": "Spawn"
+                }
+              }
+            }
+          },
+          "SetRadius": {
+            "list-name": "Set Radius",
+            "display-text": "Set radius to {0}",
+            "description": "Set radius",
+            "params": {
+              "radius": {
+                "name": "Radius",
+                "desc": "The radius to set"
               }
             }
           }
         },
         "conditions": {
-          "Condition": {
-            "list-name": "Sample Condition",
-            "display-text": "Sample Condition {0}",
-            "description": "This is a sample condition",
-            "params": {
-              "param1": {
-                "name": "Param1",
-                "desc": "This is a sample param"
-              }
-            }
-          },
-          "Trigger": {
-            "list-name": "Sample Trigger",
-            "display-text": "Sample Trigger",
-            "description": "This is a sample trigger",
+          "IsDragging": {
+            "list-name": "Is dragging",
+            "display-text": "Is dragging",
+            "description": "True when the joystick is used",
             "params": {}
           },
-          "ConditionCombo": {
-            "list-name": "Sample Condition",
-            "display-text": "Sample Condition {0}",
-            "description": "This is a sample condition",
-            "params": {
-              "param1": {
-                "name": "Param1",
-                "desc": "This is a sample param",
-                "items": {
-                  "TRUE": "True",
-                  "FALSE": "False"
-                }
-              }
-            }
+          "OnDragStart": {
+            "list-name": "On drag start",
+            "display-text": "On drag start",
+            "description": "Triggered when the joystick starts being used",
+            "params": {}
           },
-          "SampleCondition": {
-            "list-name": "Sample Condition",
-            "display-text": "Sample Condition",
-            "description": "This is a sample condition",
+          "OnDragStop": {
+            "list-name": "On drag end",
+            "display-text": "On drag end",
+            "description": "Triggered when the joystick stops being used",
             "params": {}
           }
         },
         "expressions": {
-          "Expression": {
-            "translated-name": "Expression",
-            "description": "Sample Expression",
+          "JoystickAngle": {
+            "translated-name": "JoystickAngle",
+            "description": "Returns the joystick's angle",
             "params": {}
           },
-          "Expression2": {
-            "translated-name": "Expression2",
-            "description": "Sample Expression",
+          "JoystickDirX": {
+            "translated-name": "JoystickDirX",
+            "description": "Returns the joystick's X displacement",
             "params": {}
           },
-          "SampleExpression": {
-            "translated-name": "SampleExpression",
-            "description": "This is a sample expression",
+          "JoystickDirY": {
+            "translated-name": "JoystickDirY",
+            "description": "Returns the joystick's Y displacement",
+            "params": {}
+          },
+          "JoystickDistance": {
+            "translated-name": "JoystickDistance",
+            "description": "Returns the joystick's distance",
+            "params": {}
+          },
+          "JoystickForce": {
+            "translated-name": "JoystickForce",
+            "description": "Returns the joystick's force",
+            "params": {}
+          },
+          "JoystickForceX": {
+            "translated-name": "JoystickForceX",
+            "description": "Returns the joystick's X force",
+            "params": {}
+          },
+          "JoystickForceY": {
+            "translated-name": "JoystickForceY",
+            "description": "Returns the joystick's Y force",
+            "params": {}
+          },
+          "JoystickRadius": {
+            "translated-name": "JoystickRadius",
+            "description": "Returns the joystick's radius",
+            "params": {}
+          },
+          "JoystickX": {
+            "translated-name": "JoystickX",
+            "description": "Returns the joystick's X position",
+            "params": {}
+          },
+          "JoystickY": {
+            "translated-name": "JoystickY",
+            "description": "Returns the joystick's Y position",
             "params": {}
           }
         }

@@ -37,7 +37,7 @@ export const aceCategories = {};
 export const info = {
   icon: "icon.svg",
   // PLUGIN world only
-  defaultImageUrl: "default-image.png",
+  // defaultImageUrl: "default-image.png",
   Set: {
     // COMMON to all
     CanBeBundled: true,
@@ -73,6 +73,33 @@ export const info = {
 };
 
 export const properties = [
+  {
+    type: PROPERTY_TYPE.LINK,
+    id: "texture",
+    options: {
+      linkText: "Edit",
+      callbackType: "once-for-type",
+      linkCallback: function (instOrObj) {
+        instOrObj.EditImage();
+      },
+    },
+    name: "Texture",
+    desc: "Click to edit the object's texture.",
+  },
+  {
+    type: PROPERTY_TYPE.LINK,
+    id: "size",
+    options: {
+      linkText: "Make 1:1",
+      callbackType: "for-each-instance",
+      linkCallback: function (inst) {
+        const img = inst.GetObjectType().GetImage();
+        inst.SetSize(img.GetWidth(), img.GetHeight());
+      },
+    },
+    name: "Size",
+    desc: "Click to set the object to the same size as its image.",
+  },
   {
     type: PROPERTY_TYPE.COMBO,
     id: "touch_event",

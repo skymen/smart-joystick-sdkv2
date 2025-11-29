@@ -219,13 +219,14 @@ export default function (parentClass) {
 
     _draw(renderer) {
       //TODO
-      const imageInfo = this._objectClass.GetImageInfo();
-      const texture = imageInfo.GetTexture();
+      debugger;
+      const imageInfo = this._objectClass.getImageInfo();
+      const texture = imageInfo.getTexture();
 
       if (!texture) return; // dynamic texture load which hasn't completed yet; can't draw anything
 
       const quad = this.getBoundingQuad();
-      const rcTex = imageInfo.GetTexRect();
+      const rcTex = imageInfo.getTexRect();
 
       renderer.setTexture(texture);
       renderer.setAlphaBlendMode();
