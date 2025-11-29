@@ -184,7 +184,7 @@ export default function (parentClass) {
           const newOpacity =
             currentOpacity + (1.1 - currentOpacity) / timeInFrames;
           this.opacity = newOpacity;
-          this.runtime.updateRender();
+          this.runtime.sdk.updateRender();
         }
         if (this.opacity >= 1) {
           this.opacity = 1;
@@ -198,7 +198,7 @@ export default function (parentClass) {
           const newOpacity =
             currentOpacity + (-0.1 - currentOpacity) / timeInFrames;
           this.opacity = newOpacity;
-          this.runtime.updateRender();
+          this.runtime.sdk.updateRender();
         }
         if (this.opacity <= 0) {
           this.setPosition(this.originX, this.originY);
@@ -218,6 +218,7 @@ export default function (parentClass) {
     }
 
     _draw(renderer) {
+      //TODO
       const imageInfo = this._objectClass.GetImageInfo();
       const texture = imageInfo.GetTexture();
 
@@ -230,7 +231,7 @@ export default function (parentClass) {
       renderer.setAlphaBlendMode();
       renderer.setTextureFillMode();
 
-      if (this._runtime.isPixelRoundingEnabled) {
+      if (this.runtime.isPixelRoundingEnabled) {
         const ox = Math.round(this.x) - this.x;
         const oy = Math.round(this.y) - this.y;
         const tempQuad = this.getBoundingQuad();
@@ -277,7 +278,7 @@ export default function (parentClass) {
 
     AfterLoad() {
       this.justLoaded = false;
-      this.handle = this._runtime.getInstanceByUid(this.handleUID);
+      this.handle = this.runtime.getInstanceByUid(this.handleUID);
     }
 
     _getDebuggerProperties() {

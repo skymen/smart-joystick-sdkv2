@@ -29,9 +29,10 @@ export default function (parentClass) {
     }
 
     GetInstances() {
+      // TODO
       const arr = [];
       if (this.AllObjectClasses.length === 0) {
-        this.AllObjectClasses = [...this._runtime.objects]
+        this.AllObjectClasses = [...this.runtime.objects]
           .filter((objClass) => objClass[1]._plugin === this)
           .map(([name, objClass]) => objClass);
       }

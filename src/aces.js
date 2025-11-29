@@ -7,6 +7,7 @@ condition(
   category,
   "IsDragging",
   {
+    c2id: 0,
     highlight: false,
     deprecated: false,
     listName: "Is dragging",
@@ -23,6 +24,7 @@ condition(
   category,
   "OnDragStart",
   {
+    c2id: 1,
     highlight: false,
     deprecated: false,
     isTrigger: true,
@@ -40,6 +42,7 @@ condition(
   category,
   "OnDragStop",
   {
+    c2id: 2,
     highlight: false,
     deprecated: false,
     isTrigger: true,
@@ -58,6 +61,7 @@ action(
   category,
   "BindHandle",
   {
+    c2id: 0,
     highlight: false,
     deprecated: false,
     isAsync: false,
@@ -89,6 +93,7 @@ action(
   category,
   "SetRadius",
   {
+    c2id: 1,
     highlight: false,
     deprecated: false,
     isAsync: false,
@@ -114,6 +119,7 @@ action(
   category,
   "SetMode",
   {
+    c2id: 2,
     highlight: false,
     deprecated: false,
     isAsync: false,
@@ -140,6 +146,7 @@ action(
   category,
   "SetEvent",
   {
+    c2id: 3,
     highlight: false,
     deprecated: false,
     isAsync: false,
@@ -167,6 +174,7 @@ expression(
   category,
   "JoystickAngle",
   {
+    c2id: 0,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -184,6 +192,7 @@ expression(
   category,
   "JoystickDistance",
   {
+    c2id: 1,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -201,6 +210,7 @@ expression(
   category,
   "JoystickForce",
   {
+    c2id: 2,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -220,6 +230,7 @@ expression(
   category,
   "JoystickRadius",
   {
+    c2id: 3,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -236,6 +247,7 @@ expression(
   category,
   "JoystickX",
   {
+    c2id: 4,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -252,6 +264,7 @@ expression(
   category,
   "JoystickY",
   {
+    c2id: 5,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -268,6 +281,7 @@ expression(
   category,
   "JoystickDirX",
   {
+    c2id: 6,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -285,6 +299,7 @@ expression(
   category,
   "JoystickDirY",
   {
+    c2id: 7,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -302,6 +317,7 @@ expression(
   category,
   "JoystickForceX",
   {
+    c2id: 8,
     highlight: false,
     deprecated: false,
     returnType: "number",
@@ -321,6 +337,7 @@ expression(
   category,
   "JoystickForceY",
   {
+    c2id: 9,
     highlight: false,
     deprecated: false,
     returnType: "number",
