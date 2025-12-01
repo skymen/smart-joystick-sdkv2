@@ -70,7 +70,7 @@
             "display-text": "Bind {0} to joystick handle",
             "description": "Bind Handle",
             "params": {
-              "handle": {
+              "param0": {
                 "name": "Handle",
                 "desc": "The Handle to bind."
               }
@@ -81,7 +81,7 @@
             "display-text": "Set touch event to {0}",
             "description": "Set Touch Event",
             "params": {
-              "event": {
+              "param3": {
                 "name": "Event",
                 "desc": "The event to set",
                 "items": {
@@ -97,7 +97,7 @@
             "display-text": "Set mode to {0}",
             "description": "Set Mode",
             "params": {
-              "mode": {
+              "param3": {
                 "name": "Mode",
                 "desc": "The mode to set",
                 "items": {
@@ -113,7 +113,7 @@
             "display-text": "Set radius to {0}",
             "description": "Set radius",
             "params": {
-              "radius": {
+              "param0": {
                 "name": "Radius",
                 "desc": "The radius to set"
               }

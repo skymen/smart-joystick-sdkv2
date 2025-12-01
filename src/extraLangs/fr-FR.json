@@ -70,7 +70,7 @@
             "display-text": "Lier {0} à la poignée du joystick",
             "description": "Lier la poignée",
             "params": {
-              "handle": {
+              "param0": {
                 "name": "Poignée",
                 "desc": "La poignée à lier."
               }
@@ -81,7 +81,7 @@
             "display-text": "Définir l'événement tactile sur {0}",
             "description": "Définir l'événement tactile",
             "params": {
-              "event": {
+              "param3": {
                 "name": "Événement",
                 "desc": "L'événement à définir",
                 "items": {
@@ -97,7 +97,7 @@
             "display-text": "Définir le mode sur {0}",
             "description": "Définir le mode",
             "params": {
-              "mode": {
+              "param3": {
                 "name": "Mode",
                 "desc": "Le mode à définir",
                 "items": {
@@ -113,7 +113,7 @@
             "display-text": "Définir le rayon sur {0}",
             "description": "Définir le rayon",
             "params": {
-              "radius": {
+              "param0": {
                 "name": "Rayon",
                 "desc": "Le rayon à définir"
               }
@@ -147,12 +147,12 @@
             "params": {}
           },
           "joystick-dir-x": {
-            "translated-name": "DirectionJoystickX",
+            "translated-name": "DirXJoystick",
             "description": "Retourne le déplacement X du joystick",
             "params": {}
           },
           "joystick-dir-y": {
-            "translated-name": "DirectionJoystickY",
+            "translated-name": "DirYJoystick",
             "description": "Retourne le déplacement Y du joystick",
             "params": {}
           },
@@ -167,12 +167,12 @@
             "params": {}
           },
           "joystick-force-x": {
-            "translated-name": "ForceJoystickX",
+            "translated-name": "ForceXJoystick",
             "description": "Retourne la force X du joystick",
             "params": {}
           },
           "joystick-force-y": {
-            "translated-name": "ForceJoystickY",
+            "translated-name": "ForceYJoystick",
             "description": "Retourne la force Y du joystick",
             "params": {}
           },
@@ -182,12 +182,12 @@
             "params": {}
           },
           "joystick-x": {
-            "translated-name": "JoystickX",
+            "translated-name": "XJoystick",
             "description": "Retourne la position X du joystick",
             "params": {}
           },
           "joystick-y": {
-            "translated-name": "JoystickY",
+            "translated-name": "YJoystick",
             "description": "Retourne la position Y du joystick",
             "params": {}
           }

@@ -74,7 +74,7 @@ action(
     description: "Bind Handle",
     params: [
       {
-        id: "handle",
+        id: "param0",
         name: "Handle",
         desc: "The Handle to bind.",
         type: "object",
@@ -107,7 +107,7 @@ action(
     description: "Set radius",
     params: [
       {
-        id: "radius",
+        id: "param0",
         name: "Radius",
         desc: "The radius to set",
         type: "number",
@@ -134,7 +134,7 @@ action(
     description: "Set Mode",
     params: [
       {
-        id: "mode",
+        id: "param3",
         name: "Mode",
         desc: "The mode to set",
         type: "combo",
@@ -162,7 +162,7 @@ action(
     description: "Set Touch Event",
     params: [
       {
-        id: "event",
+        id: "param3",
         name: "Event",
         desc: "The event to set",
         type: "combo",

@@ -49,11 +49,11 @@
           },
           "radius": {
             "name": "Radio",
-            "desc": "Solo si es inteligente o generar. Decide el radio en el que el joystick se activa de todos modos."
+            "desc": "Solo si es inteligente o generar. Decide el radio en el que el joystick se activa de todas formas."
           },
           "use-mouse-input": {
             "name": "Usar entrada de ratón",
-            "desc": "Si se debe usar la entrada de ratón o solo la entrada táctil",
+            "desc": "Si se debe usar la entrada del ratón o solo la entrada táctil",
             "items": {
               "Yes": "Sí",
               "No": "No"
@@ -70,7 +70,7 @@
             "display-text": "Vincular {0} al mango del joystick",
             "description": "Vincular mango",
             "params": {
-              "handle": {
+              "param0": {
                 "name": "Mango",
                 "desc": "El mango a vincular."
               }
@@ -81,7 +81,7 @@
             "display-text": "Establecer evento de toque a {0}",
             "description": "Establecer evento de toque",
             "params": {
-              "event": {
+              "param3": {
                 "name": "Evento",
                 "desc": "El evento a establecer",
                 "items": {
@@ -97,7 +97,7 @@
             "display-text": "Establecer modo a {0}",
             "description": "Establecer modo",
             "params": {
-              "mode": {
+              "param3": {
                 "name": "Modo",
                 "desc": "El modo a establecer",
                 "items": {
@@ -113,7 +113,7 @@
             "display-text": "Establecer radio a {0}",
             "description": "Establecer radio",
             "params": {
-              "radius": {
+              "param0": {
                 "name": "Radio",
                 "desc": "El radio a establecer"
               }
@@ -182,12 +182,12 @@
             "params": {}
           },
           "joystick-x": {
-            "translated-name": "XJoystick",
+            "translated-name": "JoystickX",
             "description": "Devuelve la posición X del joystick",
             "params": {}
           },
           "joystick-y": {
-            "translated-name": "YJoystick",
+            "translated-name": "JoystickY",
             "description": "Devuelve la posición Y del joystick",
             "params": {}
           }

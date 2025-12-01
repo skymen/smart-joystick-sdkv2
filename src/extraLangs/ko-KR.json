@@ -49,11 +49,11 @@
           },
           "radius": {
             "name": "반경",
-            "desc": "스마트 또는 스폰일 때만 해당. 조이스틱이 무조건 트리거되는 반경을 결정합니다."
+            "desc": "스마트 또는 스폰일 때만 해당. 조이스틱이 어쨌든 트리거되는 반경을 결정합니다."
           },
           "use-mouse-input": {
             "name": "마우스 입력 사용",
-            "desc": "마우스 입력을 사용할지 또는 터치 입력만 사용할지",
+            "desc": "마우스 입력을 사용할지 또는 터치 입력만 사용할지 여부",
             "items": {
               "Yes": "예",
               "No": "아니오"
@@ -70,7 +70,7 @@
             "display-text": "{0}을(를) 조이스틱 핸들에 바인딩",
             "description": "핸들 바인딩",
             "params": {
-              "handle": {
+              "param0": {
                 "name": "핸들",
                 "desc": "바인딩할 핸들."
               }
@@ -81,7 +81,7 @@
             "display-text": "터치 이벤트를 {0}(으)로 설정",
             "description": "터치 이벤트 설정",
             "params": {
-              "event": {
+              "param3": {
                 "name": "이벤트",
                 "desc": "설정할 이벤트",
                 "items": {
@@ -97,7 +97,7 @@
             "display-text": "모드를 {0}(으)로 설정",
             "description": "모드 설정",
             "params": {
-              "mode": {
+              "param3": {
                 "name": "모드",
                 "desc": "설정할 모드",
                 "items": {
@@ -113,7 +113,7 @@
             "display-text": "반경을 {0}(으)로 설정",
             "description": "반경 설정",
             "params": {
-              "radius": {
+              "param0": {
                 "name": "반경",
                 "desc": "설정할 반경"
               }
