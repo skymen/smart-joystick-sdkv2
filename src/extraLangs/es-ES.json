@@ -5,7 +5,7 @@
     "plugins": {
       "skymen_smartjoystick": {
         "name": "Joystick Inteligente",
-        "description": "Un plugin de joystick inteligente",
+        "description": "Un complemento de joystick inteligente",
         "help-url": "https://www.construct.net",
         "aceCategories": {
           "general": "general"
@@ -40,7 +40,7 @@
           },
           "mode": {
             "name": "Modo",
-            "desc": "Ninguno se comporta como un joystick normal. Inteligente sigue el mango si se aleja demasiado. Generar crea el joystick si se pulsa en cualquier parte dentro del radio y luego se comporta como un joystick normal.",
+            "desc": "Ninguno se comporta como un joystick normal. Inteligente sigue el mango si se aleja demasiado. Generar crea el joystick si se pulsa en cualquier lugar dentro del radio y luego se comporta como un joystick normal.",
             "items": {
               "None": "Ninguno",
               "Smart": "Inteligente",
@@ -49,11 +49,11 @@
           },
           "radius": {
             "name": "Radio",
-            "desc": "Solo si es inteligente o generar. Decide el radio en el que el joystick se activa de todas formas."
+            "desc": "Solo si es inteligente o generar. Decide el radio en el que el joystick se activa de todos modos."
           },
           "use-mouse-input": {
             "name": "Usar entrada de ratón",
-            "desc": "Si se debe usar la entrada del ratón o solo la entrada táctil",
+            "desc": "Si se debe usar la entrada de ratón o solo la entrada táctil",
             "items": {
               "Yes": "Sí",
               "No": "No"
@@ -61,11 +61,11 @@
           },
           "fade-time": {
             "name": "Tiempo de desvanecimiento",
-            "desc": "Solo si el evento de toque está en desvanecer. El tiempo está en milisegundos."
+            "desc": "Solo si el evento de toque está configurado en desvanecer. El tiempo está en milisegundos."
           }
         },
         "actions": {
-          "BindHandle": {
+          "bind-handle": {
             "list-name": "Vincular mango",
             "display-text": "Vincular {0} al mango del joystick",
             "description": "Vincular mango",
@@ -76,7 +76,7 @@
               }
             }
           },
-          "SetEvent": {
+          "set-event": {
             "list-name": "Establecer evento de toque",
             "display-text": "Establecer evento de toque a {0}",
             "description": "Establecer evento de toque",
@@ -92,7 +92,7 @@
               }
             }
           },
-          "SetMode": {
+          "set-mode": {
             "list-name": "Establecer modo",
             "display-text": "Establecer modo a {0}",
             "description": "Establecer modo",
@@ -108,7 +108,7 @@
               }
             }
           },
-          "SetRadius": {
+          "set-radius": {
             "list-name": "Establecer radio",
             "display-text": "Establecer radio a {0}",
             "description": "Establecer radio",
@@ -121,19 +121,19 @@
           }
         },
         "conditions": {
-          "IsDragging": {
+          "is-dragging": {
             "list-name": "Está arrastrando",
             "display-text": "Está arrastrando",
             "description": "Verdadero cuando se usa el joystick",
             "params": {}
           },
-          "OnDragStart": {
+          "on-drag-start": {
             "list-name": "Al iniciar arrastre",
             "display-text": "Al iniciar arrastre",
             "description": "Se activa cuando se empieza a usar el joystick",
             "params": {}
           },
-          "OnDragStop": {
+          "on-drag-stop": {
             "list-name": "Al finalizar arrastre",
             "display-text": "Al finalizar arrastre",
             "description": "Se activa cuando se deja de usar el joystick",
@@ -141,53 +141,53 @@
           }
         },
         "expressions": {
-          "JoystickAngle": {
+          "joystick-angle": {
             "translated-name": "ÁnguloJoystick",
             "description": "Devuelve el ángulo del joystick",
             "params": {}
           },
-          "JoystickDirX": {
-            "translated-name": "JoystickDirX",
+          "joystick-dir-x": {
+            "translated-name": "DirXJoystick",
             "description": "Devuelve el desplazamiento X del joystick",
             "params": {}
           },
-          "JoystickDirY": {
-            "translated-name": "JoystickDirY",
+          "joystick-dir-y": {
+            "translated-name": "DirYJoystick",
             "description": "Devuelve el desplazamiento Y del joystick",
             "params": {}
           },
-          "JoystickDistance": {
+          "joystick-distance": {
             "translated-name": "DistanciaJoystick",
             "description": "Devuelve la distancia del joystick",
             "params": {}
           },
-          "JoystickForce": {
+          "joystick-force": {
             "translated-name": "FuerzaJoystick",
             "description": "Devuelve la fuerza del joystick",
             "params": {}
           },
-          "JoystickForceX": {
-            "translated-name": "FuerzaJoystickX",
+          "joystick-force-x": {
+            "translated-name": "FuerzaXJoystick",
             "description": "Devuelve la fuerza X del joystick",
             "params": {}
           },
-          "JoystickForceY": {
-            "translated-name": "FuerzaJoystickY",
+          "joystick-force-y": {
+            "translated-name": "FuerzaYJoystick",
             "description": "Devuelve la fuerza Y del joystick",
             "params": {}
           },
-          "JoystickRadius": {
+          "joystick-radius": {
             "translated-name": "RadioJoystick",
             "description": "Devuelve el radio del joystick",
             "params": {}
           },
-          "JoystickX": {
-            "translated-name": "JoystickX",
+          "joystick-x": {
+            "translated-name": "XJoystick",
             "description": "Devuelve la posición X del joystick",
             "params": {}
           },
-          "JoystickY": {
-            "translated-name": "JoystickY",
+          "joystick-y": {
+            "translated-name": "YJoystick",
             "description": "Devuelve la posición Y del joystick",
             "params": {}
           }

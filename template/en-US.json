@@ -65,7 +65,7 @@
           }
         },
         "actions": {
-          "BindHandle": {
+          "bind-handle": {
             "list-name": "Bind Handle",
             "display-text": "Bind {0} to joystick handle",
             "description": "Bind Handle",
@@ -76,7 +76,7 @@
               }
             }
           },
-          "SetEvent": {
+          "set-event": {
             "list-name": "Set Touch Event",
             "display-text": "Set touch event to {0}",
             "description": "Set Touch Event",
@@ -92,7 +92,7 @@
               }
             }
           },
-          "SetMode": {
+          "set-mode": {
             "list-name": "Set Mode",
             "display-text": "Set mode to {0}",
             "description": "Set Mode",
@@ -108,7 +108,7 @@
               }
             }
           },
-          "SetRadius": {
+          "set-radius": {
             "list-name": "Set Radius",
             "display-text": "Set radius to {0}",
             "description": "Set radius",
@@ -121,19 +121,19 @@
           }
         },
         "conditions": {
-          "IsDragging": {
+          "is-dragging": {
             "list-name": "Is dragging",
             "display-text": "Is dragging",
             "description": "True when the joystick is used",
             "params": {}
           },
-          "OnDragStart": {
+          "on-drag-start": {
             "list-name": "On drag start",
             "display-text": "On drag start",
             "description": "Triggered when the joystick starts being used",
             "params": {}
           },
-          "OnDragStop": {
+          "on-drag-stop": {
             "list-name": "On drag end",
             "display-text": "On drag end",
             "description": "Triggered when the joystick stops being used",
@@ -141,52 +141,52 @@
           }
         },
         "expressions": {
-          "JoystickAngle": {
+          "joystick-angle": {
             "translated-name": "JoystickAngle",
             "description": "Returns the joystick's angle",
             "params": {}
           },
-          "JoystickDirX": {
+          "joystick-dir-x": {
             "translated-name": "JoystickDirX",
             "description": "Returns the joystick's X displacement",
             "params": {}
           },
-          "JoystickDirY": {
+          "joystick-dir-y": {
             "translated-name": "JoystickDirY",
             "description": "Returns the joystick's Y displacement",
             "params": {}
           },
-          "JoystickDistance": {
+          "joystick-distance": {
             "translated-name": "JoystickDistance",
             "description": "Returns the joystick's distance",
             "params": {}
           },
-          "JoystickForce": {
+          "joystick-force": {
             "translated-name": "JoystickForce",
             "description": "Returns the joystick's force",
             "params": {}
           },
-          "JoystickForceX": {
+          "joystick-force-x": {
             "translated-name": "JoystickForceX",
             "description": "Returns the joystick's X force",
             "params": {}
           },
-          "JoystickForceY": {
+          "joystick-force-y": {
             "translated-name": "JoystickForceY",
             "description": "Returns the joystick's Y force",
             "params": {}
           },
-          "JoystickRadius": {
+          "joystick-radius": {
             "translated-name": "JoystickRadius",
             "description": "Returns the joystick's radius",
             "params": {}
           },
-          "JoystickX": {
+          "joystick-x": {
             "translated-name": "JoystickX",
             "description": "Returns the joystick's X position",
             "params": {}
           },
-          "JoystickY": {
+          "joystick-y": {
             "translated-name": "JoystickY",
             "description": "Returns the joystick's Y position",
             "params": {}

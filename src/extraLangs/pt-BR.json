@@ -65,7 +65,7 @@
           }
         },
         "actions": {
-          "BindHandle": {
+          "bind-handle": {
             "list-name": "Vincular Controle",
             "display-text": "Vincular {0} ao controle do joystick",
             "description": "Vincular Controle",
@@ -76,7 +76,7 @@
               }
             }
           },
-          "SetEvent": {
+          "set-event": {
             "list-name": "Definir Evento de Toque",
             "display-text": "Definir evento de toque para {0}",
             "description": "Definir Evento de Toque",
@@ -92,7 +92,7 @@
               }
             }
           },
-          "SetMode": {
+          "set-mode": {
             "list-name": "Definir Modo",
             "display-text": "Definir modo para {0}",
             "description": "Definir Modo",
@@ -108,7 +108,7 @@
               }
             }
           },
-          "SetRadius": {
+          "set-radius": {
             "list-name": "Definir Raio",
             "display-text": "Definir raio para {0}",
             "description": "Definir raio",
@@ -121,19 +121,19 @@
           }
         },
         "conditions": {
-          "IsDragging": {
+          "is-dragging": {
             "list-name": "Está arrastando",
             "display-text": "Está arrastando",
             "description": "Verdadeiro quando o joystick está sendo usado",
             "params": {}
           },
-          "OnDragStart": {
+          "on-drag-start": {
             "list-name": "Ao iniciar arrasto",
             "display-text": "Ao iniciar arrasto",
             "description": "Disparado quando o joystick começa a ser usado",
             "params": {}
           },
-          "OnDragStop": {
+          "on-drag-stop": {
             "list-name": "Ao finalizar arrasto",
             "display-text": "Ao finalizar arrasto",
             "description": "Disparado quando o joystick para de ser usado",
@@ -141,53 +141,53 @@
           }
         },
         "expressions": {
-          "JoystickAngle": {
-            "translated-name": "JoystickAngulo",
+          "joystick-angle": {
+            "translated-name": "AnguloJoystick",
             "description": "Retorna o ângulo do joystick",
             "params": {}
           },
-          "JoystickDirX": {
-            "translated-name": "JoystickDirX",
+          "joystick-dir-x": {
+            "translated-name": "DirXJoystick",
             "description": "Retorna o deslocamento X do joystick",
             "params": {}
           },
-          "JoystickDirY": {
-            "translated-name": "JoystickDirY",
+          "joystick-dir-y": {
+            "translated-name": "DirYJoystick",
             "description": "Retorna o deslocamento Y do joystick",
             "params": {}
           },
-          "JoystickDistance": {
-            "translated-name": "JoystickDistancia",
+          "joystick-distance": {
+            "translated-name": "DistanciaJoystick",
             "description": "Retorna a distância do joystick",
             "params": {}
           },
-          "JoystickForce": {
-            "translated-name": "JoystickForca",
+          "joystick-force": {
+            "translated-name": "ForcaJoystick",
             "description": "Retorna a força do joystick",
             "params": {}
           },
-          "JoystickForceX": {
-            "translated-name": "JoystickForcaX",
+          "joystick-force-x": {
+            "translated-name": "ForcaXJoystick",
             "description": "Retorna a força X do joystick",
             "params": {}
           },
-          "JoystickForceY": {
-            "translated-name": "JoystickForcaY",
+          "joystick-force-y": {
+            "translated-name": "ForcaYJoystick",
             "description": "Retorna a força Y do joystick",
             "params": {}
           },
-          "JoystickRadius": {
-            "translated-name": "JoystickRaio",
+          "joystick-radius": {
+            "translated-name": "RaioJoystick",
             "description": "Retorna o raio do joystick",
             "params": {}
           },
-          "JoystickX": {
-            "translated-name": "JoystickX",
+          "joystick-x": {
+            "translated-name": "XJoystick",
             "description": "Retorna a posição X do joystick",
             "params": {}
           },
-          "JoystickY": {
-            "translated-name": "JoystickY",
+          "joystick-y": {
+            "translated-name": "YJoystick",
             "description": "Retorna a posição Y do joystick",
             "params": {}
           }

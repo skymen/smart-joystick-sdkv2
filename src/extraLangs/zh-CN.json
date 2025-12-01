@@ -40,7 +40,7 @@
           },
           "mode": {
             "name": "模式",
-            "desc": "无时表现为普通摇杆。智能模式下如果手柄太远会跟随。生成模式下在半径内任意位置点击会生成摇杆，然后表现为普通摇杆。",
+            "desc": "无：像普通摇杆一样工作。智能：如果手柄太远则跟随手柄。生成：在半径范围内点击会生成摇杆，然后像普通摇杆一样工作。",
             "items": {
               "None": "无",
               "Smart": "智能",
@@ -65,7 +65,7 @@
           }
         },
         "actions": {
-          "BindHandle": {
+          "bind-handle": {
             "list-name": "绑定手柄",
             "display-text": "将 {0} 绑定到摇杆手柄",
             "description": "绑定手柄",
@@ -76,7 +76,7 @@
               }
             }
           },
-          "SetEvent": {
+          "set-event": {
             "list-name": "设置触摸事件",
             "display-text": "将触摸事件设置为 {0}",
             "description": "设置触摸事件",
@@ -92,7 +92,7 @@
               }
             }
           },
-          "SetMode": {
+          "set-mode": {
             "list-name": "设置模式",
             "display-text": "将模式设置为 {0}",
             "description": "设置模式",
@@ -108,7 +108,7 @@
               }
             }
           },
-          "SetRadius": {
+          "set-radius": {
             "list-name": "设置半径",
             "display-text": "将半径设置为 {0}",
             "description": "设置半径",
@@ -121,72 +121,72 @@
           }
         },
         "conditions": {
-          "IsDragging": {
+          "is-dragging": {
             "list-name": "正在拖动",
             "display-text": "正在拖动",
             "description": "当摇杆被使用时为真",
             "params": {}
           },
-          "OnDragStart": {
-            "list-name": "拖动开始时",
-            "display-text": "拖动开始时",
+          "on-drag-start": {
+            "list-name": "开始拖动时",
+            "display-text": "开始拖动时",
             "description": "当摇杆开始被使用时触发",
             "params": {}
           },
-          "OnDragStop": {
-            "list-name": "拖动结束时",
-            "display-text": "拖动结束时",
+          "on-drag-stop": {
+            "list-name": "结束拖动时",
+            "display-text": "结束拖动时",
             "description": "当摇杆停止被使用时触发",
             "params": {}
           }
         },
         "expressions": {
-          "JoystickAngle": {
+          "joystick-angle": {
             "translated-name": "JoystickAngle",
             "description": "返回摇杆的角度",
             "params": {}
           },
-          "JoystickDirX": {
+          "joystick-dir-x": {
             "translated-name": "JoystickDirX",
-            "description": "返回摇杆的X位移",
+            "description": "返回摇杆的X方向位移",
             "params": {}
           },
-          "JoystickDirY": {
+          "joystick-dir-y": {
             "translated-name": "JoystickDirY",
-            "description": "返回摇杆的Y位移",
+            "description": "返回摇杆的Y方向位移",
             "params": {}
           },
-          "JoystickDistance": {
+          "joystick-distance": {
             "translated-name": "JoystickDistance",
             "description": "返回摇杆的距离",
             "params": {}
           },
-          "JoystickForce": {
+          "joystick-force": {
             "translated-name": "JoystickForce",
             "description": "返回摇杆的力度",
             "params": {}
           },
-          "JoystickForceX": {
+          "joystick-force-x": {
             "translated-name": "JoystickForceX",
             "description": "返回摇杆的X方向力度",
             "params": {}
           },
-          "JoystickForceY": {
+          "joystick-force-y": {
             "translated-name": "JoystickForceY",
             "description": "返回摇杆的Y方向力度",
             "params": {}
           },
-          "JoystickRadius": {
+          "joystick-radius": {
             "translated-name": "JoystickRadius",
             "description": "返回摇杆的半径",
             "params": {}
           },
-          "JoystickX": {
+          "joystick-x": {
             "translated-name": "JoystickX",
             "description": "返回摇杆的X坐标",
             "params": {}
           },
-          "JoystickY": {
+          "joystick-y": {
             "translated-name": "JoystickY",
             "description": "返回摇杆的Y坐标",
             "params": {}

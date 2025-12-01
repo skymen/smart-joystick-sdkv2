@@ -7,6 +7,7 @@ condition(
   category,
   "IsDragging",
   {
+    id: "is-dragging",
     c2id: 0,
     highlight: false,
     deprecated: false,
@@ -24,6 +25,7 @@ condition(
   category,
   "OnDragStart",
   {
+    id: "on-drag-start",
     c2id: 1,
     highlight: false,
     deprecated: false,
@@ -42,6 +44,7 @@ condition(
   category,
   "OnDragStop",
   {
+    id: "on-drag-stop",
     c2id: 2,
     highlight: false,
     deprecated: false,
@@ -61,6 +64,7 @@ action(
   category,
   "BindHandle",
   {
+    id: "bind-handle",
     c2id: 0,
     highlight: false,
     deprecated: false,
@@ -93,6 +97,7 @@ action(
   category,
   "SetRadius",
   {
+    id: "set-radius",
     c2id: 1,
     highlight: false,
     deprecated: false,
@@ -119,6 +124,7 @@ action(
   category,
   "SetMode",
   {
+    id: "set-mode",
     c2id: 2,
     highlight: false,
     deprecated: false,
@@ -146,6 +152,7 @@ action(
   category,
   "SetEvent",
   {
+    id: "set-event",
     c2id: 3,
     highlight: false,
     deprecated: false,
@@ -174,6 +181,7 @@ expression(
   category,
   "JoystickAngle",
   {
+    id: "joystick-angle",
     c2id: 0,
     highlight: false,
     deprecated: false,
@@ -191,6 +199,7 @@ expression(
   category,
   "JoystickDistance",
   {
+    id: "joystick-distance",
     c2id: 1,
     highlight: false,
     deprecated: false,
@@ -208,6 +217,7 @@ expression(
   category,
   "JoystickForce",
   {
+    id: "joystick-force",
     c2id: 2,
     highlight: false,
     deprecated: false,
@@ -227,6 +237,7 @@ expression(
   category,
   "JoystickRadius",
   {
+    id: "joystick-radius",
     c2id: 3,
     highlight: false,
     deprecated: false,
@@ -244,6 +255,7 @@ expression(
   category,
   "JoystickX",
   {
+    id: "joystick-x",
     c2id: 4,
     highlight: false,
     deprecated: false,
@@ -261,6 +273,7 @@ expression(
   category,
   "JoystickY",
   {
+    id: "joystick-y",
     c2id: 5,
     highlight: false,
     deprecated: false,
@@ -278,6 +291,7 @@ expression(
   category,
   "JoystickDirX",
   {
+    id: "joystick-dir-x",
     c2id: 6,
     highlight: false,
     deprecated: false,
@@ -295,6 +309,7 @@ expression(
   category,
   "JoystickDirY",
   {
+    id: "joystick-dir-y",
     c2id: 7,
     highlight: false,
     deprecated: false,
@@ -312,6 +327,7 @@ expression(
   category,
   "JoystickForceX",
   {
+    id: "joystick-force-x",
     c2id: 8,
     highlight: false,
     deprecated: false,
@@ -331,6 +347,7 @@ expression(
   category,
   "JoystickForceY",
   {
+    id: "joystick-force-y",
     c2id: 9,
     highlight: false,
     deprecated: false,
