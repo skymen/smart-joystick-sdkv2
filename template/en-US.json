@@ -6,7 +6,7 @@
       "skymen_smartjoystick": {
         "name": "Smart Joystick",
         "description": "A smart joystick plugin",
-        "help-url": "https://www.construct.net",
+        "help-url": "https://github.com/skymen/smart-joystick-sdkv2",
         "aceCategories": {
           "general": "general"
         },

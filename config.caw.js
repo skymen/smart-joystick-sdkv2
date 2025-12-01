@@ -12,8 +12,9 @@ export const name = "Smart Joystick";
 export const version = _version;
 export const minConstructVersion = undefined;
 export const author = "skymen";
-export const website = "https://www.construct.net";
-export const documentation = "https://www.construct.net";
+export const website =
+  "https://www.construct.net/en/make-games/addons/1526/smart-joystick";
+export const documentation = "https://github.com/skymen/smart-joystick-sdkv2";
 export const description = "A smart joystick plugin";
 export const category = ADDON_CATEGORY.INPUT;
 

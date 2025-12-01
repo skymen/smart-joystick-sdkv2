@@ -1,14 +1,17 @@
 <img src="./src/icon.svg" width="100" /><br>
 # Smart Joystick
 <i>A smart joystick plugin</i> <br>
-### Version 2.0.1.1
+### Version 2.0.1.2
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/better-joystick/releases/download/skymen_smartJoystick-2.0.1.1.c3addon/skymen_smartJoystick-2.0.1.1.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/better-joystick/releases/download/skymen_smartJoystick-2.0.1.2.c3addon/skymen_smartJoystick-2.0.1.2.c3addon)
 <br>
 <sub> [See all releases](https://github.com/skymen/better-joystick/releases) </sub> <br>
 
 ---
 <b><u>Author:</u></b> skymen <br>
+<b>[Construct Addon Page](https://www.construct.net/en/make-games/addons/1526/smart-joystick)</b>  <br>
+<b>[Addon Website](https://www.construct.net/en/make-games/addons/1526/smart-joystick)</b>  <br>
+<b>[Documentation](https://github.com/skymen/smart-joystick-sdkv2)</b>  <br>
 <sub>Made using [CAW](https://marketplace.visualstudio.com/items?itemName=skymen.caw) </sub><br>
 
 ## Table of Contents
