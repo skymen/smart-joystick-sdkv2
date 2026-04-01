@@ -55,6 +55,7 @@ const Instance = createInstance(
         superObject.wrapperComponentId = runtimeConfig.id;
       }
       super(superObject);
+      this.events = {};
     }
   }
 );
