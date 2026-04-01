@@ -1,2 +1,7 @@
 {
+  "2.0.1.3": {
+    "added": "",
+    "changed": "",
+    "fixed": "Should not crash when using earlier versions of C3 anymore"
+  }
 }

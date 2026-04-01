@@ -1,11 +1,16 @@
 <img src="./src/icon.svg" width="100" /><br>
 # Smart Joystick
 <i>A smart joystick plugin</i> <br>
-### Version 2.0.1.2
+### Version 2.0.1.3
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/better-joystick/releases/download/skymen_smartJoystick-2.0.1.2.c3addon/skymen_smartJoystick-2.0.1.2.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/better-joystick/releases/download/skymen_smartJoystick-2.0.1.3.c3addon/skymen_smartJoystick-2.0.1.3.c3addon)
 <br>
 <sub> [See all releases](https://github.com/skymen/better-joystick/releases) </sub> <br>
+
+#### What's New in 2.0.1.3
+- **Fixed:** Should not crash when using earlier versions of C3 anymore
+
+<sub>[View full changelog](#changelog)</sub>
 
 ---
 <b><u>Author:</u></b> skymen <br>
@@ -86,3 +91,10 @@ npm run dev
 | JoystickRadius | Returns the joystick's radius | number |  | 
 | JoystickX | Returns the joystick's X position | number |  | 
 | JoystickY | Returns the joystick's Y position | number |  | 
+
+
+---
+## Changelog
+
+**2.0.1.3**
+- **Fixed:** Should not crash when using earlier versions of C3 anymore
